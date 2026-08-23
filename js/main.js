@@ -68,8 +68,8 @@ if (contactForm) {
       `📞 Mi teléfono: ${telefono}`
     );
 
-    // Reemplaza 34600000000 con tu número real
-    window.open(`https://wa.me/34600000000?text=${mensaje}`, '_blank');
+    // Reemplaza 34684402367 con tu número real
+    window.open(`https://wa.me/34684402367?text=${mensaje}`, '_blank');
   });
 }
 
