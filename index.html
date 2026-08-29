@@ -3,91 +3,347 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEXARA Madrid — Reparación de Móviles Express en tu Coche</title>
-  <meta name="description" content="Reparamos tu móvil desde nuestro taller móvil, donde tú estés, en Madrid. Servicio express a domicilio. Pantallas, baterías y más. ¡Sin desplazamientos!" />
-  <meta name="keywords" content="reparación móvil Madrid, cambio pantalla domicilio Madrid, técnico móvil a domicilio Madrid, reparación express móvil Madrid" />
-  <meta property="og:title" content="NEXARA — Reparación en tu Coche" />
-  <meta property="og:description" content="Tu técnico llega donde estás y repara tu móvil en el coche, en minutos." />
+  <title>NEXARA Madrid — Reparación de Móviles Express en Coche Taller</title>
+  <meta name="description" content="Reparación express de móviles a domicilio en Madrid. Me desplazo a tu ubicación y reparo tu teléfono en 30 min dentro de mi coche taller equipado." />
+  <meta name="keywords" content="reparación móvil Madrid, cambio pantalla domicilio Madrid, técnico móvil a domicilio Madrid, reparación express móvil Madrid, coche taller moviles" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="NEXARA Madrid — Reparación Express en Coche Taller" />
+  <meta property="og:description" content="Técnico a domicilio en Madrid. Llego donde estés y reparo tu pantalla o batería en 30 minutos desde mi coche taller." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://borja-jpg.github.io/Borja-jpg/" />
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#inicio" class="nav-logo">
-        <span class="logo-icon">⚡</span>
-        <span><strong>NEXARA</strong></span>
+        <div class="logo-badge">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <span class="logo-title">NEXARA<span class="logo-dot">.</span></span>
       </a>
+
+      <div class="nav-status-pill">
+        <span class="live-pulse"></span>
+        <span class="status-text">Disponible hoy en Madrid</span>
+      </div>
+
       <ul class="nav-links" id="navLinks">
         <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#precios">Precios</a></li>
         <li><a href="#videos">Vídeos</a></li>
         <li><a href="#resenas">Reseñas</a></li>
-        <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+        <li><a href="#faq">Dudas</a></li>
+        <li>
+          <a href="https://wa.me/34603164544?text=Hola!%20Necesito%20reparar%20mi%20m%C3%B3vil" target="_blank" class="nav-cta-btn">
+            <i class="fab fa-whatsapp"></i> <span>Pedir Cita</span>
+          </a>
+        </li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menú">
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-badge">🚗 Madrid &amp; alrededores</div>
-      <h1>Reparación express<br /><span class="gradient-text">desde mi coche taller</span></h1>
-      <p class="hero-subtitle">
-        Técnico a domicilio express en Madrid. Me desplazo donde estés
-        y reparo tu móvil <strong>desde mi coche taller</strong>, en minutos, sin colas ni esperas.
-      </p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">⏱ 30min</span>
-          <span class="stat-label">Reparación media</span>
+    <div class="hero-container">
+      <div class="hero-content">
+        
+        <div class="hero-live-badge">
+          <span class="pulse-dot"></span>
+          <span>COCHE TALLER 100% EQUIPADO · MADRID</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">🛡 6 meses</span>
-          <span class="stat-label">De garantía</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">📍 Madrid</span>
-          <span class="stat-label">Cobertura total</span>
-        </div>
-      </div>
-      <div class="hero-buttons">
-        <a href="https://wa.me/34603164544?text=Hola!%20Necesito%20reparar%20mi%20movil" target="_blank" class="btn btn-primary">
-          <i class="fab fa-whatsapp"></i> WhatsApp ahora
-        </a>
-        <a href="tel:+34603164544" class="btn btn-secondary">
-          <i class="fas fa-phone"></i> Llamar
-        </a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <div class="phone-mockup">
-        <div class="phone-screen">
-          <div class="repair-animation">
-            <span class="tool-icon">🔧</span>
-            <span class="phone-icon">📱</span>
+
+        <h1 class="hero-title">
+          Tu móvil reparado en <span class="highlight-cyan">30 minutos</span> desde mi <span class="gradient-text">coche taller</span>
+        </h1>
+
+        <p class="hero-description">
+          Sin desplazarte, sin colas y sin dejar tu móvil durante días. Me desplazo a tu casa, oficina o donde estés en Madrid y lo reparo al instante en mi taller móvil.
+        </p>
+
+        <!-- Feature Pills -->
+        <div class="hero-features-list">
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>En tu ubicación en 30-45 min</span>
           </div>
-          <p>Reparando desde el coche…</p>
-          <div class="progress-bar"><div class="progress-fill"></div></div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>6 meses de garantía total</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Repuestos premium certificados</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>100% privacidad de tus datos</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="hero-cta-group">
+          <a href="https://wa.me/34603164544?text=Hola!%20Necesito%20presupuesto%20urgente%20para%20mi%20m%C3%B3vil" target="_blank" class="btn btn-glow-whatsapp">
+            <div class="btn-shine"></div>
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp Express</strong>
+              <small>Respuesta en < 5 min</small>
+            </div>
+          </a>
+          <a href="tel:+34603164544" class="btn btn-glass-call">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <strong>Llamar Ahora</strong>
+              <small>603 16 45 44</small>
+            </div>
+          </a>
+        </div>
+
+        <!-- Trust Mini Banner -->
+        <div class="hero-trust-box">
+          <div class="google-stars">
+            <i class="fab fa-google"></i>
+            <span class="stars-icons">★★★★★</span>
+            <strong>4.9/5</strong>
+          </div>
+          <span class="divider-pipe"></span>
+          <span class="trust-count">+300 clientes satisfechos en Madrid</span>
+        </div>
+
+      </div>
+
+      <!-- Hero Visual Interactive Workbench -->
+      <div class="hero-visual">
+        <div class="tech-card-wrapper">
+          <div class="tech-card">
+            
+            <div class="card-top-bar">
+              <div class="dot-status red"></div>
+              <div class="dot-status yellow"></div>
+              <div class="dot-status green"></div>
+              <span class="console-title">NEXARA_MOBILE_LAB // v2.6</span>
+            </div>
+
+            <div class="card-body">
+              <div class="phone-diagnostic-display">
+                <div class="tech-circle-scanner">
+                  <i class="fas fa-mobile-screen"></i>
+                  <div class="scan-beam"></div>
+                </div>
+                
+                <div class="status-feed">
+                  <div class="feed-row">
+                    <span class="feed-label">ESTADO TALLER</span>
+                    <span class="feed-val active"><i class="fas fa-circle"></i> EN RUTA</span>
+                  </div>
+                  <div class="feed-row">
+                    <span class="feed-label">TIEMPO MEDIO</span>
+                    <span class="feed-val highlight">⏱ 25 MINUTOS</span>
+                  </div>
+                  <div class="feed-row">
+                    <span class="feed-label">HERRAMIENTAS</span>
+                    <span class="feed-val ok">✓ 100% LISTAS</span>
+                  </div>
+                  <div class="feed-row">
+                    <span class="feed-label">COBERTURA</span>
+                    <span class="feed-val">📍 MADRID &amp; ALREDEDORES</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Animated Mini Progress -->
+              <div class="live-progress-box">
+                <div class="progress-info">
+                  <span>Diagnóstico y reparación exprés</span>
+                  <strong>100% Garantizado</strong>
+                </div>
+                <div class="custom-progress">
+                  <div class="progress-bar-fill"></div>
+                </div>
+              </div>
+
+              <!-- Badges Floating in Card -->
+              <div class="card-floating-tags">
+                <span class="tech-tag"><i class="fas fa-shield-alt"></i> Garantía 6M</span>
+                <span class="tech-tag"><i class="fas fa-car-side"></i> Coche Taller</span>
+                <span class="tech-tag"><i class="fas fa-bolt"></i> En el acto</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-glow-reflection"></div>
         </div>
       </div>
     </div>
-    <div class="scroll-indicator">
-      <span>Descubre cómo funciona</span>
-      <i class="fas fa-chevron-down"></i>
+  </section>
+
+  <!-- CALCULADORA INTERACTIVA DE PRESUPUESTO -->
+  <section class="section calculadora-section" id="calculadora">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-calculator"></i> Presupuesto en 1 Clic</span>
+        <h2>Calcula tu reparación al instante</h2>
+        <p>Selecciona tu dispositivo y avería para ver el precio estimado y pedir cita inmediata.</p>
+      </div>
+
+      <div class="calculator-card">
+        <div class="calc-grid">
+          
+          <!-- Step 1: Marca -->
+          <div class="calc-step">
+            <label class="calc-label"><span class="step-num">1</span> Marca del móvil</label>
+            <div class="brand-selector-grid">
+              <button type="button" class="brand-btn active" data-brand="iphone">
+                <i class="fab fa-apple"></i>
+                <span>iPhone</span>
+              </button>
+              <button type="button" class="brand-btn" data-brand="samsung">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Samsung</span>
+              </button>
+              <button type="button" class="brand-btn" data-brand="xiaomi">
+                <i class="fas fa-microchip"></i>
+                <span>Xiaomi</span>
+              </button>
+              <button type="button" class="brand-btn" data-brand="otros">
+                <i class="fas fa-ellipsis-h"></i>
+                <span>Otras Marcas</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Avería -->
+          <div class="calc-step">
+            <label class="calc-label"><span class="step-num">2</span> ¿Qué necesita tu teléfono?</label>
+            <div class="issue-selector-grid">
+              <button type="button" class="issue-btn active" data-issue="pantalla" data-base-price="69" data-time="25-35 min">
+                <i class="fas fa-mobile-screen-button"></i>
+                <span>Pantalla Rota</span>
+              </button>
+              <button type="button" class="issue-btn" data-issue="bateria" data-base-price="39" data-time="15-25 min">
+                <i class="fas fa-battery-half"></i>
+                <span>Cambio Batería</span>
+              </button>
+              <button type="button" class="issue-btn" data-issue="conector" data-base-price="45" data-time="20-30 min">
+                <i class="fas fa-plug"></i>
+                <span>Conector Carga</span>
+              </button>
+              <button type="button" class="issue-btn" data-issue="tapa" data-base-price="49" data-time="30-45 min">
+                <i class="fas fa-gem"></i>
+                <span>Cristal Trasero</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Zona -->
+          <div class="calc-step">
+            <label class="calc-label"><span class="step-num">3</span> Tu zona en Madrid</label>
+            <div class="input-styled-wrapper">
+              <i class="fas fa-map-marker-alt input-icon"></i>
+              <input type="text" id="calcZona" placeholder="Ej: Chamartín, Retiro, Vallecas, Alcorcón..." class="calc-input" value="Madrid Centro" />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Result Box -->
+        <div class="calc-result-panel">
+          <div class="result-details">
+            <div class="res-item">
+              <span class="res-label">Precio estimado</span>
+              <div class="res-price-row">
+                <span class="res-desde">desde</span>
+                <span class="res-price" id="calcPriceDisplay">69€</span>
+              </div>
+            </div>
+            <div class="res-item">
+              <span class="res-label">Tiempo de reparación</span>
+              <span class="res-time" id="calcTimeDisplay"><i class="fas fa-clock"></i> 25-35 min</span>
+            </div>
+            <div class="res-item">
+              <span class="res-label">Desplazamiento</span>
+              <span class="res-badge-free"><i class="fas fa-check"></i> Coche taller a tu puerta</span>
+            </div>
+          </div>
+
+          <a href="#" id="calcWhatsAppBtn" target="_blank" class="btn btn-glow-whatsapp btn-calc-action">
+            <i class="fab fa-whatsapp"></i>
+            <span>Pedir Cita para esta Reparación</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVA: COCHE TALLER VS TIENDA TRADICIONAL -->
+  <section class="section vs-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-balance-scale"></i> Ventaja Revolucionaria</span>
+        <h2>¿Por qué elegir NEXARA Coche Taller?</h2>
+        <p>Compara la experiencia de reparar con nosotros frente a ir a un taller tradicional.</p>
+      </div>
+
+      <div class="vs-grid">
+        
+        <!-- NEXARA -->
+        <div class="vs-card nexara-card">
+          <div class="vs-card-badge">✨ Experiencia NEXARA</div>
+          <div class="vs-icon-header">
+            <i class="fas fa-car-side"></i>
+            <h3>Mi Coche Taller a Domicilio</h3>
+          </div>
+          <ul class="vs-list good">
+            <li><i class="fas fa-check-circle"></i> <strong>0 minutos perdidos:</strong> voy directamente a tu puerta (casa, trabajo, gimnasio).</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Reparado en 25-35 min:</strong> mientras sigues con tu día.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Tus datos 100% seguros:</strong> no dejamos tu móvil durante días con extraños.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>6 meses de garantía</strong> por escrito con repuestos certificados.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Pago cómodo:</strong> Bizum, tarjeta contactless o efectivo.</li>
+          </ul>
+        </div>
+
+        <!-- TIENDA TRADICIONAL -->
+        <div class="vs-card bad-card">
+          <div class="vs-icon-header">
+            <i class="fas fa-store-slash"></i>
+            <h3>Tienda o Taller Tradicional</h3>
+          </div>
+          <ul class="vs-list bad">
+            <li><i class="fas fa-times-circle"></i> Tienes que desplazarte, buscar aparcamiento y hacer colas.</li>
+            <li><i class="fas fa-times-circle"></i> Te piden dejar el móvil de 2 a 5 días laborables.</li>
+            <li><i class="fas fa-times-circle"></i> Te quedas incomunicado sin tu teléfono para trabajar.</li>
+            <li><i class="fas fa-times-circle"></i> Desconfianza por tus fotos, chats y datos bancarios.</li>
+            <li><i class="fas fa-times-circle"></i> Precios inflados por costes de alquiler de locales comerciales.</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -95,30 +351,47 @@
   <section class="section como-funciona" id="como-funciona">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Simple y rápido</span>
-        <h2>¿Cómo funciona?</h2>
-        <p>Sin desplazamientos, sin esperas. Tu técnico va donde estás tú.</p>
+        <span class="section-tag"><i class="fas fa-route"></i> Proceso 100% Cómodo</span>
+        <h2>¿Cómo funciona el servicio?</h2>
+        <p>Tres sencillos pasos para tener tu smartphone como nuevo hoy mismo.</p>
       </div>
+
       <div class="steps-grid">
         <div class="step-card">
-          <div class="step-number">01</div>
-          <div class="step-icon"><i class="fas fa-comment-dots"></i></div>
-          <h3>Contáctanos</h3>
-          <p>Escríbenos por WhatsApp o llámanos. Cuéntanos qué le pasa a tu móvil y dónde estás en Madrid.</p>
+          <div class="step-glow"></div>
+          <div class="step-number-badge">01</div>
+          <div class="step-icon-box">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3>1. Escríbeme o Llama</h3>
+          <p>Dime qué modelo de móvil tienes, qué le pasa y en qué zona de Madrid te encuentras.</p>
+          <span class="step-pill">Respuesta < 5 min</span>
         </div>
-        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <div class="step-icon"><i class="fas fa-car"></i></div>
-          <h3>Vamos a ti</h3>
-          <p>Nos desplazamos a tu ubicación en Madrid. Llegamos en tiempo récord con todo el material necesario.</p>
+
+        <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="step-card highlight">
+          <div class="step-glow"></div>
+          <div class="step-number-badge">02</div>
+          <div class="step-icon-box">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3>2. Me desplazo a ti</h3>
+          <p>Llego en mi coche taller totalmente equipado con herramientas profesionales de microelectrónica.</p>
+          <span class="step-pill">En 30-45 min</span>
         </div>
-        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+
         <div class="step-card">
-          <div class="step-number">03</div>
-          <div class="step-icon"><i class="fas fa-tools"></i></div>
-          <h3>Reparamos en el coche</h3>
-          <p>Trabajo desde mi coche taller totalmente equipado. En 30 minutos tu móvil vuelve a funcionar como nuevo.</p>
+          <div class="step-glow"></div>
+          <div class="step-number-badge">03</div>
+          <div class="step-icon-box">
+            <i class="fas fa-screwdriver-wrench"></i>
+          </div>
+          <h3>3. Reparado en el Coche</h3>
+          <p>Trabajo en el vehículo mientras tú sigues en casa u oficina. En 30 minutos te lo entrego listo.</p>
+          <span class="step-pill">Garantía 6 Meses</span>
         </div>
       </div>
     </div>
@@ -128,156 +401,348 @@
   <section class="section servicios" id="servicios">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Nuestras especialidades</span>
-        <h2>Servicios</h2>
-        <p>Reparamos los problemas más comunes con repuestos de calidad y garantía incluida.</p>
+        <span class="section-tag"><i class="fas fa-microchip"></i> Especialidades Técnicas</span>
+        <h2>Servicios que realizo en el Coche Taller</h2>
+        <p>Solución rápida a las averías más habituales con piezas de máxima calidad.</p>
       </div>
+
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
-            <i class="fas fa-mobile-screen-button"></i>
-          </div>
-          <h3>Cambio de pantalla</h3>
-          <p>Pantalla rota o sin táctil. Usamos pantallas originales o de alta calidad según tu presupuesto.</p>
-          <span class="service-time"><i class="fas fa-clock"></i> 20–40 min</span>
-        </div>
+        
         <div class="service-card featured">
-          <div class="service-badge">Más solicitado</div>
-          <div class="service-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
-            <i class="fas fa-battery-half"></i>
+          <div class="service-top-tag">⭐ Más Solicitado</div>
+          <div class="service-icon-wrap cyan">
+            <i class="fas fa-mobile-screen"></i>
           </div>
-          <h3>Cambio de batería</h3>
-          <p>¿Tu móvil dura poco o no carga bien? Cambiamos la batería con repuesto certificado.</p>
-          <span class="service-time"><i class="fas fa-clock"></i> 15–25 min</span>
-        </div>
-        <div class="service-card">
-          <div class="service-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
-            <i class="fas fa-plug"></i>
+          <h3>Cambio de Pantalla</h3>
+          <p>Cristal roto, panel OLED con líneas o táctil que no responde. Dejo tu pantalla perfecta con TrueTone y sensibilidad original.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 25–35 min</span>
+            <span class="price-hint">desde 49€</span>
           </div>
-          <h3>Conector de carga</h3>
-          <p>Problemas para cargar el móvil. Reparamos o sustituimos el puerto USB-C o Lightning.</p>
-          <span class="service-time"><i class="fas fa-clock"></i> 25–45 min</span>
         </div>
+
         <div class="service-card">
-          <div class="service-icon" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+          <div class="service-icon-wrap orange">
+            <i class="fas fa-battery-three-quarters"></i>
+          </div>
+          <h3>Sustitución de Batería</h3>
+          <p>¿La batería se agota rápido o se apaga de golpe? Batería nueva de alta capacidad con ciclos a cero y máxima autonomía.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 15–25 min</span>
+            <span class="price-hint">desde 39€</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap purple">
+            <i class="fas fa-gem"></i>
+          </div>
+          <h3>Tapa Trasera (Back Glass)</h3>
+          <p>Cristal trasero agrietado o roto. Sustitución limpia con sellado estanco para que tu teléfono luzca como el primer día.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 30–45 min</span>
+            <span class="price-hint">desde 49€</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap blue">
+            <i class="fas fa-plug-circle-bolt"></i>
+          </div>
+          <h3>Puerto de Carga / USB-C</h3>
+          <p>El cable no entra bien, no carga o hay falso contacto. Limpieza profunda o cambio de puerto de carga Lightning / USB-C.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 20–30 min</span>
+            <span class="price-hint">desde 45€</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap green">
             <i class="fas fa-camera"></i>
           </div>
-          <h3>Cámara y flash</h3>
-          <p>Fotos desenfocadas, cámara negra o flash que no funciona. Lo dejamos como nuevo.</p>
-          <span class="service-time"><i class="fas fa-clock"></i> 20–35 min</span>
-        </div>
-        <div class="service-card">
-          <div class="service-icon" style="background: linear-gradient(135deg, #fa709a, #fee140);">
-            <i class="fas fa-droplet"></i>
+          <h3>Cámaras y Cristal Lente</h3>
+          <p>Lente rayada, cámara que tiembla o no enfoca. Cambio de módulo de cámara y cristal protector para fotos nítidas.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 20–35 min</span>
+            <span class="price-hint">desde 45€</span>
           </div>
-          <h3>Daños por agua</h3>
-          <p>Diagnóstico y limpieza de placa base. Salvamos móviles que cayeron al agua.</p>
-          <span class="service-time"><i class="fas fa-clock"></i> 30–60 min</span>
         </div>
+
         <div class="service-card">
-          <div class="service-icon" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">
-            <i class="fas fa-microchip"></i>
+          <div class="service-icon-wrap yellow">
+            <i class="fas fa-water"></i>
           </div>
-          <h3>Problemas de software</h3>
-          <p>Móvil lento, bloqueado, sin red o con errores del sistema. Diagnóstico y reparación.</p>
-          <span class="service-time"><i class="fas fa-clock"></i> 15–30 min</span>
+          <h3>Limpieza de Placa / Mojados</h3>
+          <p>Desoxidación por ultrasonidos y tratamiento químico para recuperar terminales que han sufrido caídas al agua o líquidos.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 35–50 min</span>
+            <span class="price-hint">Diagnóstico Gratis</span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- PRECIOS -->
+  <!-- TABLA DE PRECIOS -->
   <section class="section precios" id="precios">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Transparencia total</span>
-        <h2>Precios</h2>
-        <p>Precios cerrados antes de empezar. Sin sorpresas. Si no se arregla, no pagas.</p>
+        <span class="section-tag"><i class="fas fa-tags"></i> Tarifas Claras</span>
+        <h2>Precios Orientativos Madrid</h2>
+        <p>Precios cerrados con repuesto, desplazamiento y mano de obra incluidos. Sin sustos.</p>
       </div>
-      <div class="prices-note">
-        <i class="fas fa-info-circle"></i>
-        <span>Presupuesto gratuito y sin compromiso. Escríbenos por WhatsApp con tu modelo.</span>
-      </div>
+
       <div class="prices-tabs">
-        <button class="price-tab active" data-brand="samsung">Samsung</button>
-        <button class="price-tab" data-brand="iphone">iPhone</button>
-        <button class="price-tab" data-brand="xiaomi">Xiaomi</button>
-        <button class="price-tab" data-brand="otros">Otros</button>
+        <button class="price-tab active" data-brand="iphone"><i class="fab fa-apple"></i> iPhone</button>
+        <button class="price-tab" data-brand="samsung"><i class="fas fa-mobile-alt"></i> Samsung Galaxy</button>
+        <button class="price-tab" data-brand="xiaomi"><i class="fas fa-microchip"></i> Xiaomi / Redmi</button>
+        <button class="price-tab" data-brand="otros"><i class="fas fa-ellipsis-h"></i> Otras Marcas</button>
       </div>
+
       <div class="prices-table-wrapper">
-        <div class="price-table active" id="samsung">
+        
+        <!-- IPHONE -->
+        <div class="price-table active" id="iphone">
           <table>
-            <thead><tr><th>Reparación</th><th>Modelos</th><th>Precio</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Reparación</th>
+                <th>Modelos Compatibles</th>
+                <th>Tiempo Estimado</th>
+                <th>Precio Final</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>Galaxy S25 / S25+</td><td class="price-cell">desde <strong>129€</strong></td></tr>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>Galaxy S24 / S23</td><td class="price-cell">desde <strong>99€</strong></td></tr>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>Galaxy A55 / A35</td><td class="price-cell">desde <strong>79€</strong></td></tr>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>Galaxy A25 / A15</td><td class="price-cell">desde <strong>59€</strong></td></tr>
-              <tr><td><i class="fas fa-battery-half"></i> Batería</td><td>Cualquier Galaxy</td><td class="price-cell">desde <strong>45€</strong></td></tr>
-              <tr><td><i class="fas fa-plug"></i> Conector carga</td><td>Cualquier Galaxy</td><td class="price-cell">desde <strong>55€</strong></td></tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla OLED / Display</strong></td>
+                <td>iPhone 16 / 16 Plus / 16 Pro</td>
+                <td><span class="time-badge">⏱ 30 min</span></td>
+                <td class="price-cell">desde <strong>149€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla OLED / Display</strong></td>
+                <td>iPhone 15 / 15 Plus / 15 Pro</td>
+                <td><span class="time-badge">⏱ 30 min</span></td>
+                <td class="price-cell">desde <strong>119€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla OLED / Display</strong></td>
+                <td>iPhone 13 / 13 Pro / 14 / 14 Pro</td>
+                <td><span class="time-badge">⏱ 25 min</span></td>
+                <td class="price-cell">desde <strong>89€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla Retina</strong></td>
+                <td>iPhone 11 / 12 / XR / SE</td>
+                <td><span class="time-badge">⏱ 20 min</span></td>
+                <td class="price-cell">desde <strong>69€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-battery-half table-icon"></i> <strong>Batería de Alta Capacidad</strong></td>
+                <td>iPhone 11 al 16 Pro Max</td>
+                <td><span class="time-badge">⏱ 20 min</span></td>
+                <td class="price-cell">desde <strong>59€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-gem table-icon"></i> <strong>Tapa Trasera (Cristal)</strong></td>
+                <td>iPhone 12 / 13 / 14 / 15</td>
+                <td><span class="time-badge">⏱ 35 min</span></td>
+                <td class="price-cell">desde <strong>59€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-plug table-icon"></i> <strong>Puerto Lightning / USB-C</strong></td>
+                <td>Todos los modelos iPhone</td>
+                <td><span class="time-badge">⏱ 25 min</span></td>
+                <td class="price-cell">desde <strong>55€</strong></td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <div class="price-table" id="iphone">
+
+        <!-- SAMSUNG -->
+        <div class="price-table" id="samsung">
           <table>
-            <thead><tr><th>Reparación</th><th>Modelos</th><th>Precio</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Reparación</th>
+                <th>Modelos Compatibles</th>
+                <th>Tiempo Estimado</th>
+                <th>Precio Final</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>iPhone 16 / 16 Pro</td><td class="price-cell">desde <strong>149€</strong></td></tr>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>iPhone 15 / 15 Pro</td><td class="price-cell">desde <strong>119€</strong></td></tr>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>iPhone 13 / 14</td><td class="price-cell">desde <strong>89€</strong></td></tr>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>iPhone 12 y anteriores</td><td class="price-cell">desde <strong>69€</strong></td></tr>
-              <tr><td><i class="fas fa-battery-half"></i> Batería</td><td>iPhone 12 al 16</td><td class="price-cell">desde <strong>59€</strong></td></tr>
-              <tr><td><i class="fas fa-plug"></i> Conector USB-C / Lightning</td><td>Cualquier iPhone</td><td class="price-cell">desde <strong>65€</strong></td></tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla Dynamic AMOLED</strong></td>
+                <td>Galaxy S25 / S24 / S23 Series</td>
+                <td><span class="time-badge">⏱ 35 min</span></td>
+                <td class="price-cell">desde <strong>129€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla AMOLED</strong></td>
+                <td>Galaxy S22 / S21 / S20 Series</td>
+                <td><span class="time-badge">⏱ 30 min</span></td>
+                <td class="price-cell">desde <strong>99€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla Super AMOLED</strong></td>
+                <td>Galaxy A55 / A54 / A35 / A34</td>
+                <td><span class="time-badge">⏱ 25 min</span></td>
+                <td class="price-cell">desde <strong>79€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla Serie A económica</strong></td>
+                <td>Galaxy A25 / A15 / A14 / A05</td>
+                <td><span class="time-badge">⏱ 20 min</span></td>
+                <td class="price-cell">desde <strong>59€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-battery-half table-icon"></i> <strong>Batería Original</strong></td>
+                <td>Cualquier Samsung Galaxy</td>
+                <td><span class="time-badge">⏱ 20 min</span></td>
+                <td class="price-cell">desde <strong>45€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-plug table-icon"></i> <strong>Conector de Carga USB-C</strong></td>
+                <td>Cualquier Samsung Galaxy</td>
+                <td><span class="time-badge">⏱ 20 min</span></td>
+                <td class="price-cell">desde <strong>50€</strong></td>
+              </tr>
             </tbody>
           </table>
         </div>
+
+        <!-- XIAOMI -->
         <div class="price-table" id="xiaomi">
           <table>
-            <thead><tr><th>Reparación</th><th>Modelos</th><th>Precio</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Reparación</th>
+                <th>Modelos Compatibles</th>
+                <th>Tiempo Estimado</th>
+                <th>Precio Final</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>Xiaomi 14 / 14T Pro</td><td class="price-cell">desde <strong>89€</strong></td></tr>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>Redmi Note 13 / 14</td><td class="price-cell">desde <strong>65€</strong></td></tr>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>POCO X6 / X6 Pro</td><td class="price-cell">desde <strong>69€</strong></td></tr>
-              <tr><td><i class="fas fa-mobile-screen-button"></i> Pantalla</td><td>Redmi 13 / 13C</td><td class="price-cell">desde <strong>49€</strong></td></tr>
-              <tr><td><i class="fas fa-battery-half"></i> Batería</td><td>Cualquier Xiaomi</td><td class="price-cell">desde <strong>39€</strong></td></tr>
-              <tr><td><i class="fas fa-plug"></i> Conector carga</td><td>Cualquier Xiaomi</td><td class="price-cell">desde <strong>45€</strong></td></tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla Gama Alta</strong></td>
+                <td>Xiaomi 14 / 14T Pro / 13 Series</td>
+                <td><span class="time-badge">⏱ 30 min</span></td>
+                <td class="price-cell">desde <strong>89€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla Redmi Note</strong></td>
+                <td>Redmi Note 13 / 12 / 11 Series</td>
+                <td><span class="time-badge">⏱ 25 min</span></td>
+                <td class="price-cell">desde <strong>65€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla POCO</strong></td>
+                <td>POCO X6 / X5 / F5 Series</td>
+                <td><span class="time-badge">⏱ 25 min</span></td>
+                <td class="price-cell">desde <strong>69€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-mobile-screen-button table-icon"></i> <strong>Pantalla Redmi Base</strong></td>
+                <td>Redmi 13 / 13C / 12 / 10C</td>
+                <td><span class="time-badge">⏱ 20 min</span></td>
+                <td class="price-cell">desde <strong>49€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-battery-half table-icon"></i> <strong>Batería</strong></td>
+                <td>Cualquier Xiaomi / POCO / Redmi</td>
+                <td><span class="time-badge">⏱ 20 min</span></td>
+                <td class="price-cell">desde <strong>39€</strong></td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-plug table-icon"></i> <strong>Conector de Carga</strong></td>
+                <td>Cualquier Xiaomi / POCO / Redmi</td>
+                <td><span class="time-badge">⏱ 20 min</span></td>
+                <td class="price-cell">desde <strong>45€</strong></td>
+              </tr>
             </tbody>
           </table>
         </div>
+
+        <!-- OTROS -->
         <div class="price-table" id="otros">
           <table>
-            <thead><tr><th>Marca</th><th>Reparación</th><th>Precio</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Marca</th>
+                <th>Reparación Habitual</th>
+                <th>Tiempo Estimado</th>
+                <th>Precio Final</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td>Huawei / Honor</td><td>Pantalla</td><td class="price-cell">desde <strong>65€</strong></td></tr>
-              <tr><td>OnePlus</td><td>Pantalla</td><td class="price-cell">desde <strong>79€</strong></td></tr>
-              <tr><td>Motorola</td><td>Pantalla</td><td class="price-cell">desde <strong>55€</strong></td></tr>
-              <tr><td>Google Pixel</td><td>Pantalla</td><td class="price-cell">desde <strong>89€</strong></td></tr>
-              <tr><td>Cualquier marca</td><td>Batería</td><td class="price-cell">desde <strong>39€</strong></td></tr>
-              <tr><td>Cualquier marca</td><td>Diagnóstico</td><td class="price-cell"><strong>GRATIS</strong></td></tr>
+              <tr>
+                <td><strong>Google Pixel</strong></td>
+                <td>Pantalla OLED (Pixel 7 / 8 / 9)</td>
+                <td><span class="time-badge">⏱ 30 min</span></td>
+                <td class="price-cell">desde <strong>89€</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Huawei / Honor</strong></td>
+                <td>Pantalla o Cristal</td>
+                <td><span class="time-badge">⏱ 25 min</span></td>
+                <td class="price-cell">desde <strong>65€</strong></td>
+              </tr>
+              <tr>
+                <td><strong>OnePlus / Realme</strong></td>
+                <td>Pantalla AMOLED</td>
+                <td><span class="time-badge">⏱ 25 min</span></td>
+                <td class="price-cell">desde <strong>75€</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Motorola / OPPO</strong></td>
+                <td>Pantalla Completa</td>
+                <td><span class="time-badge">⏱ 20 min</span></td>
+                <td class="price-cell">desde <strong>55€</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Cualquier Marca</strong></td>
+                <td>Diagnóstico y Comprobación</td>
+                <td><span class="time-badge">⏱ 10 min</span></td>
+                <td class="price-cell"><strong style="color:#10b981;">GRATUITO</strong></td>
+              </tr>
             </tbody>
           </table>
         </div>
+
       </div>
-      <div class="prices-cta">
-        <p>¿No ves tu modelo? Escríbenos y te damos presupuesto personalizado.</p>
-        <a href="https://wa.me/34603164544?text=Hola!%20Quiero%20presupuesto%20para%20mi%20movil" target="_blank" class="btn btn-primary">
-          <i class="fab fa-whatsapp"></i> Pedir presupuesto gratis
+
+      <div class="prices-bottom-card">
+        <div class="prices-bottom-info">
+          <i class="fas fa-info-circle"></i>
+          <div>
+            <strong>¿Tu modelo exacto no aparece en la lista?</strong>
+            <p>Trabajamos con todas las marcas y modelos del mercado. Pregúntame por WhatsApp y te doy precio al segundo.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/34603164544?text=Hola!%20Quiero%20saber%20el%20precio%20exacto%20para%20mi%20m%C3%B3vil" target="_blank" class="btn btn-glow-whatsapp">
+          <i class="fab fa-whatsapp"></i> <span>Consultar mi Modelo</span>
         </a>
       </div>
+
     </div>
   </section>
 
-  <!-- VÍDEOS -->
+  <!-- VÍDEOS DE REPARACIONES -->
   <section class="section videos" id="videos">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Transparencia en vivo</span>
-        <h2>Vídeos de reparaciones reales</h2>
-        <p>Mira cómo trabajamos. Reparaciones grabadas en directo desde nuestro taller móvil.</p>
+        <span class="section-tag"><i class="fas fa-video"></i> Transparencia Total</span>
+        <h2>Reparaciones Reales en Vídeo</h2>
+        <p>Grabaciones directas de mi trabajo dentro del coche taller en Madrid.</p>
       </div>
+
       <div class="videos-grid">
+        
         <div class="video-card">
           <div class="video-thumb">
+            <div class="video-badge-overlay"><i class="fas fa-play"></i> En Directo</div>
             <video controls playsinline preload="metadata" class="real-video">
               <source src="assets/videos/video_13promax_coche.mov" type="video/mp4">
               <source src="assets/videos/video_13promax_coche.mov" type="video/quicktime">
@@ -289,8 +754,10 @@
             <p><i class="fas fa-map-marker-alt"></i> Madrid · <i class="fas fa-car"></i> Grabado en directo desde el coche taller</p>
           </div>
         </div>
+
         <div class="video-card">
           <div class="video-thumb">
+            <div class="video-badge-overlay"><i class="fas fa-play"></i> En Directo</div>
             <video controls playsinline preload="metadata" class="real-video">
               <source src="assets/videos/video_15_tapa_trasera.mov" type="video/mp4">
               <source src="assets/videos/video_15_tapa_trasera.mov" type="video/quicktime">
@@ -302,8 +769,10 @@
             <p><i class="fas fa-map-marker-alt"></i> Madrid · <i class="fas fa-wrench"></i> Sustitución de cristal trasero (Back glass)</p>
           </div>
         </div>
+
         <div class="video-card">
           <div class="video-thumb">
+            <div class="video-badge-overlay"><i class="fas fa-play"></i> En Directo</div>
             <video controls playsinline preload="metadata" class="real-video">
               <source src="assets/videos/video_taller_movil.mov" type="video/mp4">
               <source src="assets/videos/video_taller_movil.mov" type="video/quicktime">
@@ -312,59 +781,64 @@
           </div>
           <div class="video-info">
             <h4>Reparación Express en Taller Móvil</h4>
-            <p><i class="fas fa-map-marker-alt"></i> Madrid · <i class="fas fa-bolt" style="color:#fbbf24"></i> Servicio express en tiempo récord</p>
+            <p><i class="fas fa-map-marker-alt"></i> Madrid · <i class="fas fa-bolt" style="color:#f59e0b"></i> Servicio express en tiempo récord</p>
           </div>
         </div>
+
       </div>
+
       <div class="videos-cta">
-        <p>¿Quieres ver más? Síguenos en nuestras redes.</p>
+        <p>¿Quieres ver más reparaciones y consejos de mantenimiento?</p>
         <div class="social-links">
-          <a href="#" class="social-btn tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
-          <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
-          <a href="#" class="social-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="#" class="social-btn tiktok"><i class="fab fa-tiktok"></i> <span>TikTok @nexaramadrid</span></a>
+          <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i> <span>Instagram @nexaramadrid</span></a>
+          <a href="https://youtu.be/ic-QrIAMWd4" target="_blank" class="social-btn youtube"><i class="fab fa-youtube"></i> <span>Canal YouTube</span></a>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- COBERTURA -->
+  <!-- COBERTURA MADRID -->
   <section class="section cobertura" id="cobertura">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Zona de servicio</span>
-        <h2>Cubrimos todo Madrid</h2>
-        <p>Nos desplazamos a cualquier punto de la ciudad y municipios colindantes.</p>
+        <span class="section-tag"><i class="fas fa-location-dot"></i> Radio de Cobertura</span>
+        <h2>Servicio en Toda la Comunidad de Madrid</h2>
+        <p>Me desplazo con mi coche taller a cualquier punto de la capital y municipios limítrofes.</p>
       </div>
+
       <div class="cobertura-content">
         <div class="zonas-grid">
-          <div class="zona-badge">📍 Centro</div>
+          <div class="zona-badge">📍 Centro / Sol</div>
           <div class="zona-badge">📍 Salamanca</div>
           <div class="zona-badge">📍 Chamberí</div>
           <div class="zona-badge">📍 Retiro</div>
-          <div class="zona-badge">📍 Moncloa</div>
-          <div class="zona-badge">📍 Tetuán</div>
-          <div class="zona-badge">📍 Hortaleza</div>
-          <div class="zona-badge">📍 Moratalaz</div>
+          <div class="zona-badge">📍 Chamartín</div>
+          <div class="zona-badge">📍 Moncloa - Argüelles</div>
+          <div class="zona-badge">📍 Tetuán / Cuatro Caminos</div>
+          <div class="zona-badge">📍 Hortaleza / Sanchinarro</div>
+          <div class="zona-badge">📍 Las Tablas</div>
           <div class="zona-badge">📍 Vallecas</div>
           <div class="zona-badge">📍 Carabanchel</div>
-          <div class="zona-badge">📍 Latina</div>
-          <div class="zona-badge">📍 Usera</div>
-          <div class="zona-badge">📍 Fuencarral</div>
-          <div class="zona-badge">📍 Barajas</div>
-          <div class="zona-badge">📍 Alcobendas</div>
-          <div class="zona-badge">📍 Alcorcón</div>
-          <div class="zona-badge">📍 Leganés</div>
-          <div class="zona-badge zona-plus">+ Más zonas</div>
+          <div class="zona-badge">📍 Latina / Aluche</div>
+          <div class="zona-badge">📍 Alcobendas / Sanse</div>
+          <div class="zona-badge">📍 Pozuelo / Majadahonda</div>
+          <div class="zona-badge">📍 Alcorcón / Leganés</div>
+          <div class="zona-badge zona-plus"><i class="fas fa-plus"></i> Otras Zonas de Madrid</div>
         </div>
+
         <div class="map-container">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97198.37457004065!2d-3.7492200834960937!3d40.41650000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1703000000000!5m2!1ses!2ses"
-            width="100%" height="350"
-            style="border:0; border-radius: 16px;"
-            allowfullscreen="" loading="lazy"
+            width="100%"
+            height="320"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Zona de cobertura Madrid"
-          ></iframe>
+            title="Zona de cobertura Madrid NEXARA">
+          </iframe>
         </div>
       </div>
     </div>
@@ -375,24 +849,24 @@
     <div class="container">
       <div class="garantias-grid">
         <div class="garantia-item">
-          <i class="fas fa-shield-halved"></i>
-          <h3>6 meses de garantía</h3>
-          <p>Todas las reparaciones tienen garantía de 6 meses en piezas y mano de obra.</p>
+          <div class="garantia-icon-circle"><i class="fas fa-shield-halved"></i></div>
+          <h3>6 Meses de Garantía</h3>
+          <p>Cualquier fallo en la pieza sustituida queda 100% cubierto sin coste adicional.</p>
         </div>
         <div class="garantia-item">
-          <i class="fas fa-star"></i>
-          <h3>Repuestos de calidad</h3>
-          <p>Usamos piezas originales o de alta calidad certificada. Nunca recortamos en materiales.</p>
+          <div class="garantia-icon-circle"><i class="fas fa-medal"></i></div>
+          <h3>Repuestos Certificados</h3>
+          <p>Componentes de grado original para máxima fidelidad de color, brillo y respuesta táctil.</p>
         </div>
         <div class="garantia-item">
-          <i class="fas fa-euro-sign"></i>
-          <h3>Sin arreglo, no pagas</h3>
-          <p>Si no podemos reparar tu dispositivo, el diagnóstico es completamente gratuito.</p>
+          <div class="garantia-icon-circle"><i class="fas fa-user-lock"></i></div>
+          <h3>100% Privacidad</h3>
+          <p>No se tocan contraseñas ni datos. Tu información privada permanece intacta.</p>
         </div>
         <div class="garantia-item">
-          <i class="fas fa-lock"></i>
-          <h3>Privacidad garantizada</h3>
-          <p>Nunca accedemos a tus datos personales. Tu información siempre es tuya.</p>
+          <div class="garantia-icon-circle"><i class="fas fa-hand-holding-dollar"></i></div>
+          <h3>Sin Arreglo = Sin Coste</h3>
+          <p>Si la avería no tiene solución viable, no pagas absolutamente nada.</p>
         </div>
       </div>
     </div>
@@ -402,15 +876,17 @@
   <section class="section resenas" id="resenas">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fab fa-google" style="margin-right: 5px;"></i> Opiniones verificadas en Google</span>
-        <h2>Reseñas de nuestros clientes</h2>
+        <span class="section-tag"><i class="fab fa-google"></i> Opiniones Verificadas</span>
+        <h2>Experiencias de Clientes en Madrid</h2>
         <div class="rating-summary">
           <div class="stars">★★★★★</div>
           <strong>4.9 / 5</strong>
-          <span>+300 valoraciones 5 estrellas en Madrid</span>
+          <span>+300 reparaciones realizadas con éxito</span>
         </div>
       </div>
+
       <div class="reviews-grid">
+        
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Tenía la pantalla del iPhone hecha trizas y necesitaba el móvil para trabajar con urgencia. El trato fue de 10, súper profesional y en menos de media hora ya lo tenía impecable y como nuevo. Repuestos de máxima calidad y precio transparente."</p>
@@ -418,10 +894,11 @@
             <div class="reviewer-avatar">CM</div>
             <div>
               <strong>Carlos M.</strong>
-              <span><i class="fas fa-check-circle" style="color:#22c55e; font-size:0.75rem;"></i> Chamartín, Madrid · Reseña de Google</span>
+              <span><i class="fas fa-check-circle verified-icon"></i> Chamartín, Madrid · Google Reviews</span>
             </div>
           </div>
         </div>
+
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Excelente experiencia. Cambié la batería y el conector de carga de mi Samsung y la rapidez fue increíble. Te explican todo con total honestidad antes de tocar nada y con garantía por escrito. Da gusto encontrar profesionales así en Madrid."</p>
@@ -429,10 +906,11 @@
             <div class="reviewer-avatar">BG</div>
             <div>
               <strong>Beatriz G.</strong>
-              <span><i class="fas fa-check-circle" style="color:#22c55e; font-size:0.75rem;"></i> Salamanca, Madrid · Reseña de Google</span>
+              <span><i class="fas fa-check-circle verified-icon"></i> Salamanca, Madrid · Google Reviews</span>
             </div>
           </div>
         </div>
+
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Pensé que el móvil no tenía solución tras un golpe fuerte en la pantalla. Lo repararon en tiempo récord, atención inmejorable y funcionando perfecto al 100%. Rapidez, eficacia y un precio súper competitivo."</p>
@@ -440,10 +918,11 @@
             <div class="reviewer-avatar">DS</div>
             <div>
               <strong>David S.</strong>
-              <span><i class="fas fa-check-circle" style="color:#22c55e; font-size:0.75rem;"></i> Moncloa, Madrid · Reseña de Google</span>
+              <span><i class="fas fa-check-circle verified-icon"></i> Moncloa, Madrid · Google Reviews</span>
             </div>
           </div>
         </div>
+
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Servicio impecable y express. Me salvaron el móvil en una urgencia en el mismo día. La pantalla táctil responde con la misma suavidad que la original. Puntualidad, confianza y amabilidad absoluta. ¡100% recomendable!"</p>
@@ -451,10 +930,76 @@
             <div class="reviewer-avatar">LP</div>
             <div>
               <strong>Laura P.</strong>
-              <span><i class="fas fa-check-circle" style="color:#22c55e; font-size:0.75rem;"></i> Retiro, Madrid · Reseña de Google</span>
+              <span><i class="fas fa-check-circle verified-icon"></i> Retiro, Madrid · Google Reviews</span>
             </div>
           </div>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ - PREGUNTAS FRECUENTES -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-circle-question"></i> Resuelve tus Dudas</span>
+        <h2>Preguntas Frecuentes</h2>
+        <p>Todo lo que necesitas saber antes de pedir tu cita con el coche taller.</p>
+      </div>
+
+      <div class="faq-accordion">
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Tengo que subirme al coche o esperar en la calle?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>¡Para nada! Cuando llego a tu ubicación en Madrid, me entregas el teléfono en el portal o entrada de tu edificio y tú subes a casa o sigues trabajando. En 25–35 minutos te aviso por llamada o mensaje para devolvértelo probado y funcionando.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Se pierden las fotos o datos de mi teléfono?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>No. Las reparaciones de pantalla, batería, cristal trasero o conectores no borran la memoria. Tus datos, aplicaciones, fotos y conversaciones se quedan exactamente como estaban.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué métodos de pago aceptas?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Acepto Bizum al instante, pago con tarjeta de crédito/débito contactless (disponemos de datáfono en el coche) y efectivo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué pasa si llueve o hace mal tiempo?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>El coche taller está 100% climatizado, cerrado e iluminado con estación de soldadura y microscopio portátil. El clima exterior no afecta para nada al servicio.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cuánto tiempo tardas en llegar a mi ubicación?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Dependiendo del tráfico y tu zona en Madrid, el tiempo habitual de llegada es de 30 a 45 minutos desde que confirmamos la cita por WhatsApp.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -463,54 +1008,84 @@
   <section class="section contacto" id="contacto">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Estamos aquí para ayudarte</span>
-        <h2>Contacta ahora</h2>
-        <p>Escríbenos o llámanos. Respondemos en menos de 5 minutos.</p>
+        <span class="section-tag"><i class="fas fa-paper-plane"></i> Contacto Directo</span>
+        <h2>¿Hablamos de tu avería?</h2>
+        <p>Escríbeme por WhatsApp o rellena el formulario. Te responderé en menos de 5 minutos.</p>
       </div>
+
       <div class="contacto-grid">
+        
         <div class="contacto-info">
-          <a href="https://wa.me/34603164544" target="_blank" class="contact-method whatsapp">
+          
+          <a href="https://wa.me/34603164544?text=Hola!%20Necesito%20reparar%20mi%20m%C3%B3vil" target="_blank" class="contact-method whatsapp">
             <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-            <div><strong>WhatsApp</strong><span>+34 603 16 45 44</span></div>
+            <div>
+              <strong>WhatsApp Directo</strong>
+              <span>+34 603 16 45 44</span>
+            </div>
             <i class="fas fa-arrow-right"></i>
           </a>
+
           <a href="tel:+34603164544" class="contact-method phone">
             <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <div><strong>Teléfono</strong><span>+34 603 16 45 44</span></div>
+            <div>
+              <strong>Teléfono</strong>
+              <span>+34 603 16 45 44</span>
+            </div>
             <i class="fas fa-arrow-right"></i>
           </a>
+
           <a href="mailto:contacto.nexara@gmail.com" class="contact-method email">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div><strong>Email</strong><span>contacto.nexara@gmail.com</span></div>
+            <div>
+              <strong>Email</strong>
+              <span>contacto.nexara@gmail.com</span>
+            </div>
             <i class="fas fa-arrow-right"></i>
           </a>
+
           <div class="contact-method hours">
             <div class="contact-icon"><i class="fas fa-clock"></i></div>
-            <div><strong>Horario</strong><span>Lunes – Domingo: 8:00 – 21:00</span></div>
+            <div>
+              <strong>Horario de Atención</strong>
+              <span>Lunes a Domingo: 8:00 – 21:00</span>
+            </div>
           </div>
+
         </div>
+
         <form class="contacto-form" id="contactForm">
+          <h3 class="form-title">Pide tu presupuesto express</h3>
+          
           <div class="form-group">
-            <label for="nombre">Tu nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="María García" required />
+            <label for="nombre">Tu Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Laura Martínez" required />
           </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" required />
+            </div>
+            <div class="form-group">
+              <label for="movil">Modelo de Móvil</label>
+              <input type="text" id="movil" name="movil" placeholder="Ej: iPhone 14 Pro, Galaxy S23..." required />
+            </div>
+          </div>
+
           <div class="form-group">
-            <label for="telefono">Teléfono / WhatsApp</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="+34 603 16 45 44" required />
+            <label for="averia">Describe el problema y tu zona</label>
+            <textarea id="averia" name="averia" rows="3" placeholder="Ej: Pantalla rota sin tactil, estoy en Chamberí..." required></textarea>
           </div>
-          <div class="form-group">
-            <label for="movil">Modelo de móvil</label>
-            <input type="text" id="movil" name="movil" placeholder="Ej: iPhone 14, Samsung S23..." required />
-          </div>
-          <div class="form-group">
-            <label for="averia">Describe la avería</label>
-            <textarea id="averia" name="averia" rows="4" placeholder="Ej: La pantalla está rota, no responde al tacto..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">
-            <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+
+          <button type="submit" class="btn btn-glow-whatsapp btn-full">
+            <i class="fab fa-whatsapp"></i>
+            <span>Enviar por WhatsApp</span>
           </button>
-          <p class="form-note">Al enviar, se abrirá WhatsApp con tu mensaje preparado.</p>
+          
+          <p class="form-note"><i class="fas fa-lock"></i> Se abrirá WhatsApp con tu mensaje listo para enviar. Sin compromiso.</p>
         </form>
+
       </div>
     </div>
   </section>
@@ -519,55 +1094,86 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
+        
         <div class="footer-brand">
           <a href="#inicio" class="nav-logo">
-            <span class="logo-icon">⚡</span>
-            <span><strong>NEXARA</strong></span>
+            <div class="logo-badge"><i class="fas fa-bolt"></i></div>
+            <span class="logo-title">NEXARA<span class="logo-dot">.</span></span>
           </a>
-          <p>Reparación express de móviles en Madrid. Llego donde estás y reparo desde mi coche taller.</p>
+          <p>Servicio express de reparación de smartphones a domicilio en Madrid. Tu teléfono reparado en 30 minutos desde nuestro coche taller móvil.</p>
+          <div class="footer-guarantee-pill">
+            <i class="fas fa-shield-alt"></i> 6 Meses de Garantía en Todas las Reparaciones
+          </div>
         </div>
+
         <div class="footer-links">
-          <h4>Servicios</h4>
+          <h4>Servicios Principales</h4>
           <ul>
-            <li><a href="#servicios">Cambio de pantalla</a></li>
-            <li><a href="#servicios">Batería</a></li>
-            <li><a href="#servicios">Conector de carga</a></li>
-            <li><a href="#servicios">Daños por agua</a></li>
+            <li><a href="#servicios">Cambio de Pantalla</a></li>
+            <li><a href="#servicios">Sustitución de Batería</a></li>
+            <li><a href="#servicios">Cristal / Tapa Trasera</a></li>
+            <li><a href="#servicios">Puerto de Carga USB-C</a></li>
+            <li><a href="#servicios">Limpieza por Agua</a></li>
           </ul>
         </div>
+
         <div class="footer-links">
           <h4>Navegación</h4>
           <ul>
-            <li><a href="#como-funciona">¿Cómo funciona?</a></li>
-            <li><a href="#precios">Precios</a></li>
-            <li><a href="#videos">Vídeos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#calculadora">Calculadora de Precios</a></li>
+            <li><a href="#como-funciona">¿Cómo Funciona?</a></li>
+            <li><a href="#videos">Vídeos en Vivo</a></li>
+            <li><a href="#resenas">Reseñas de Clientes</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
           </ul>
         </div>
+
         <div class="footer-social">
-          <h4>Síguenos</h4>
+          <h4>Contacto Rápido</h4>
+          <p class="footer-contact-text">
+            <a href="tel:+34603164544"><i class="fas fa-phone-alt"></i> +34 603 16 45 44</a>
+          </p>
+          <p class="footer-contact-text">
+            <a href="mailto:contacto.nexara@gmail.com"><i class="fas fa-envelope"></i> contacto.nexara@gmail.com</a>
+          </p>
+          
           <div class="social-icons">
             <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://youtu.be/ic-QrIAMWd4" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
-          <a href="https://wa.me/34603164544" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
-            <i class="fab fa-whatsapp"></i> WhatsApp
+
+          <a href="https://wa.me/34603164544?text=Hola!%20Quiero%20informaci%C3%B3n" target="_blank" class="btn btn-glow-whatsapp" style="margin-top: 1rem; width:100%; justify-content:center;">
+            <i class="fab fa-whatsapp"></i> WhatsApp Directo
           </a>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <p>© 2025 NEXARA · Todos los derechos reservados</p>
-        <p>Reparación express de móviles en Madrid · <a href="tel:+34603164544">+34 603 16 45 44</a> · <a href="mailto:contacto.nexara@gmail.com">contacto.nexara@gmail.com</a></p>
+        <p>© 2025 NEXARA Madrid · Reparación Express en Coche Taller. Todos los derechos reservados.</p>
+        <p>Madrid &amp; Alrededores · <a href="tel:+34603164544">+34 603 16 45 44</a></p>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Flotante -->
-  <a href="https://wa.me/34603164544?text=Hola!%20Necesito%20reparar%20mi%20movil" target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-    <span class="fab-tooltip">¡Escríbenos!</span>
-  </a>
+  <!-- WHATSAPP FAB FLOTANTE CON NOTIFICACIÓN TOAST -->
+  <div class="whatsapp-floating-container">
+    <div class="whatsapp-toast" id="waToast">
+      <button class="toast-close" id="toastClose">&times;</button>
+      <div class="toast-content">
+        <span class="toast-dot"></span>
+        <p>👋 ¿Se te ha roto la pantalla? <strong>¡Escríbeme y voy a tu ubicación hoy mismo!</strong></p>
+      </div>
+    </div>
+
+    <a href="https://wa.me/34603164544?text=Hola!%20Necesito%20reparar%20mi%20m%C3%B3vil" target="_blank" class="whatsapp-fab" aria-label="Escríbenos por WhatsApp">
+      <div class="fab-pulse-ring"></div>
+      <i class="fab fa-whatsapp"></i>
+      <span class="fab-tooltip">¿Te ayudamos? ¡WhatsApp en vivo!</span>
+    </a>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
