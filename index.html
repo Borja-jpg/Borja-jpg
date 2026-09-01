@@ -145,7 +145,8 @@
       <a href="#hero" class="nav-brand">
         <span class="brand-text">NEXARA</span>
       </a>
-      <div class="nav-menu">
+      
+      <div class="nav-menu" id="navMenu">
         <a href="#ingenieria">Tecnología</a>
         <a href="#taller">Coche Taller</a>
         <a href="#pantalla">Pantallas</a>
@@ -154,10 +155,14 @@
         <a href="#videos">Vídeos</a>
         <a href="#cobertura">Madrid</a>
       </div>
+
       <div class="nav-right">
         <a href="https://wa.me/34603164544?text=Hola!%20Necesito%20reparar%20mi%20m%C3%B3vil" target="_blank" class="apple-btn-buy">
-          Pedir Cita
+          <i class="fab fa-whatsapp"></i> <span>Pedir Cita</span>
         </a>
+        <button class="apple-hamburger" id="navToggle" aria-label="Abrir menú">
+          <span></span><span></span>
+        </button>
       </div>
     </nav>
   </header>
@@ -624,6 +629,24 @@
 
   <!-- SCRIPT -->
   <script>
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+        navToggle.classList.toggle('active');
+      });
+
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          navToggle.classList.remove('active');
+        });
+      });
+    }
+
     // Tab switcher
     const tabBtns = document.querySelectorAll('.t-btn');
     const tabPanes = document.querySelectorAll('.tab-pane');
@@ -634,20 +657,26 @@
         tabBtns.forEach(b => b.classList.remove('active'));
         tabPanes.forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
-        document.getElementById(target).classList.add('active');
+        const targetEl = document.getElementById(target);
+        if (targetEl) targetEl.classList.add('active');
       });
     });
 
-    // Smooth scroll
+    // Smooth scroll for all hash links with offset
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
-        if (href !== '#' && href.length > 1) {
+        if (href && href !== '#' && href.length > 1) {
           const el = document.querySelector(href);
           if (el) {
             e.preventDefault();
-            const top = el.getBoundingClientRect().top + window.scrollY - 60;
-            window.scrollTo({ top, behavior: 'smooth' });
+            const headerOffset = 70;
+            const elementPosition = el.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
           }
         }
       });

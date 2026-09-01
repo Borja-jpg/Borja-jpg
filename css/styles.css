@@ -104,17 +104,53 @@ img, video {
   color: #fff;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
 .apple-btn-buy {
   background: var(--apple-blue);
   color: #fff !important;
-  font-size: 0.78rem;
-  font-weight: 500;
-  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.95rem;
   border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .apple-btn-buy:hover {
-  opacity: 0.9;
+  background: #0071e3;
+}
+
+.apple-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.apple-hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.apple-hamburger.active span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.apple-hamburger.active span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
 }
 
 /* ---- RIBBON ---- */
@@ -778,8 +814,41 @@ img, video {
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
+  .apple-hamburger {
+    display: flex;
+  }
+
   .nav-menu {
-    display: none;
+    position: fixed;
+    top: 49px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.96);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    flex-direction: column;
+    padding: 1.5rem 2rem 2.5rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--border-apple);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    display: flex;
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-menu a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
   
   .bento-wide, .bento-wide-bottom {
