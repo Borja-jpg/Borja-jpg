@@ -674,6 +674,17 @@ def send_telegram_notification(new_jobs):
     bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
 
+    # Si no están en variables de entorno, intentar cargar config.local.json
+    local_cfg = os.path.join(BASE_DIR, "config.local.json")
+    if (not bot_token or not chat_id) and os.path.exists(local_cfg):
+        try:
+            with open(local_cfg, "r", encoding="utf-8") as f:
+                cfg = json.load(f)
+                bot_token = bot_token or cfg.get("TELEGRAM_BOT_TOKEN")
+                chat_id = chat_id or cfg.get("TELEGRAM_CHAT_ID")
+        except Exception:
+            pass
+
     if not bot_token or not chat_id:
         return
 
