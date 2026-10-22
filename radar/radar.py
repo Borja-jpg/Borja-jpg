@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """
 =============================================================================
-NEXARA JOB RADAR — Madrid (InfoJobs + LinkedIn)
-Buscador automatizado de ofertas de empleo para técnicos de telefonía,
-reparación, hardware y telecomunicaciones en la Comunidad de Madrid.
+NEXARA JOB RADAR — Madrid
+Buscador automatizado de ofertas de empleo:
+  1. InfoJobs
+  2. LinkedIn
+  3. Indeed
+  4. Job Today
 =============================================================================
 """
 
@@ -13,24 +16,13 @@ import json
 import time
 import urllib.request
 import urllib.parse
+import http.cookiejar
 from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 HISTORY_FILE = os.path.join(BASE_DIR, "history.json")
 OUTPUT_JSON = os.path.join(BASE_DIR, "jobs.json")
 OUTPUT_HTML = os.path.join(BASE_DIR, "index.html")
-
-# Búsquedas clave para el perfil de Borja
-QUERIES = [
-    "tecnico reparacion moviles",
-    "tecnico reparacion telefonia",
-    "tecnico electronico moviles",
-    "reparacion telefonos",
-    "tecnico hardware",
-    "tecnico microelectronica",
-    "tecnico informatica",
-    "tecnico telecomunicaciones"
-]
 
 CHROME_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
@@ -46,12 +38,13 @@ CHROME_HEADERS = {
     "Upgrade-Insecure-Requests": "1"
 }
 
-# Palabras clave para puntuar afinidad con el CV de Borja
+# Palabras clave para calcular afinidad con el CV de Borja
 PROFILE_KEYWORDS = {
     "movil": 20, "moviles": 20, "telefonia": 20, "smartphone": 20,
     "reparacion": 18, "reparador": 18, "pantalla": 18, "pantallas": 18,
     "electronica": 12, "electronico": 12, "microelectronica": 18,
     "hardware": 12, "informatica": 10, "ordenador": 10, "ordenadores": 10,
+    "asir": 20, "smr": 15, "redes": 12, "microinformatica": 15,
     "anovo": 25, "mediamarkt": 20, "phone house": 20, "orange": 15,
     "san sebastian de los reyes": 25, "alcobendas": 20, "madrid": 10
 }
@@ -101,7 +94,7 @@ def format_salary(salary_data):
 
 
 # =============================================================================
-# 1. SCRAPER INFOJOBS
+# 1. INFOJOBS
 # =============================================================================
 def fetch_infojobs(query):
     url = f"https://www.infojobs.net/jobsearch/search-results/list.xhtml?keyword={urllib.parse.quote(query)}&provinceIds=33"
@@ -122,7 +115,7 @@ def fetch_infojobs(query):
 
 
 # =============================================================================
-# 2. SCRAPER LINKEDIN (Guest Jobs API)
+# 2. LINKEDIN (Guest Jobs API)
 # =============================================================================
 def fetch_linkedin(query):
     url = f"https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords={urllib.parse.quote(query)}&location=Madrid&start=0"
@@ -135,7 +128,6 @@ def fetch_linkedin(query):
     try:
         with urllib.request.urlopen(req, timeout=12) as resp:
             html = resp.read().decode("utf-8", errors="ignore")
-            # Extraer títulos, empresas y links
             titles = re.findall(r'<h3 class="base-search-card__title">([^<]+)</h3>', html)
             companies = re.findall(r'<h4 class="base-search-card__subtitle">\s*<a[^>]*>([^<]+)</a>', html)
             locations = re.findall(r'<span class="job-search-card__location">([^<]+)</span>', html)
@@ -150,14 +142,131 @@ def fetch_linkedin(query):
                     "title": titles[i].strip().replace("&amp;", "&"),
                     "companyName": comp.replace("&amp;", "&"),
                     "city": loc,
-                    "salary": None,
+                    "salary": "Ver en LinkedIn",
                     "link": links[i],
-                    "contractType": "Ver en LinkedIn",
-                    "description": f"Oferta publicada en LinkedIn para puesto técnico en {loc}.",
+                    "contractType": "Ver en oferta",
+                    "description": f"Puesto técnico publicado en LinkedIn para {loc}.",
                     "source": "LinkedIn"
                 })
     except Exception as e:
         print(f"  [!] Error LinkedIn '{query}': {e}")
+    return results
+
+
+# =============================================================================
+# 3. INDEED ESPAÑA
+# =============================================================================
+def fetch_indeed(query):
+    results = []
+    cj = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+    try:
+        # 1. Warm up cookies on Indeed home
+        opener.open(urllib.request.Request("https://es.indeed.com", headers=CHROME_HEADERS), timeout=8)
+        
+        # 2. Search query
+        url = f"https://es.indeed.com/jobs?q={urllib.parse.quote(query)}&l=Madrid"
+        req = urllib.request.Request(url, headers=CHROME_HEADERS)
+        with opener.open(req, timeout=10) as r:
+            html = r.read().decode("utf-8", errors="ignore")
+
+        m = re.search(r'window\.mosaic\.providerData\[\"mosaic-provider-jobcards\"\]\s*=\s*({.*?});', html)
+        if m:
+            data = json.loads(m.group(1))
+            raw_results = data.get("metaData", {}).get("mosaicProviderJobCardsModel", {}).get("results", [])
+            for item in raw_results:
+                job_key = item.get("jobkey")
+                if not job_key:
+                    continue
+                
+                title = item.get("title", "").strip()
+                company = item.get("company", "Confidencial").strip()
+                location = item.get("formattedLocation", "Madrid").strip()
+                snippet = item.get("snippet", "")
+                
+                # Sueldo
+                salary_data = item.get("salarySnippet")
+                salary_str = "A convenir / No especificado"
+                if isinstance(salary_data, dict) and salary_data.get("text"):
+                    salary_str = salary_data["text"]
+
+                results.append({
+                    "id": f"indeed_{job_key}",
+                    "title": title,
+                    "companyName": company,
+                    "city": location,
+                    "salary": salary_str,
+                    "link": f"https://es.indeed.com/viewjob?jk={job_key}",
+                    "contractType": "Ver en Indeed",
+                    "description": snippet[:280] if snippet else f"Oferta técnica publicada en Indeed para {location}.",
+                    "source": "Indeed"
+                })
+    except Exception as e:
+        print(f"  [!] Error Indeed '{query}': {e}")
+    return results
+
+
+# =============================================================================
+# 4. JOB TODAY
+# =============================================================================
+def fetch_jobtoday(category_slug):
+    results = []
+    url = f"https://jobtoday.com/es/{category_slug}"
+    headers = {
+        "User-Agent": CHROME_HEADERS["User-Agent"],
+        "Accept-Language": "es-ES,es;q=0.9"
+    }
+    req = urllib.request.Request(url, headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            html = resp.read().decode("utf-8", errors="ignore")
+            m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html)
+            if m:
+                data = json.loads(m.group(1))
+                sections = data.get("props", {}).get("pageProps", {}).get("feed", {}).get("sections", [])
+                for s in sections:
+                    items = s.get("items", [])
+                    for it in items:
+                        p = it.get("payload", {})
+                        if not p:
+                            continue
+                        
+                        role = p.get("role", "").strip()
+                        comp = (p.get("companyName") or "Empresa Job Today").strip()
+                        city = (p.get("addressInfo", {}).get("city") or p.get("address") or "Madrid").strip()
+                        key = p.get("key", "")
+                        slug = p.get("canonicalUrl") or f"/es/trabajo/{key}"
+                        desc = p.get("description", "")
+                        
+                        # Filtrar solo si tiene relación técnica o de tienda/reparación
+                        check_text = f"{role} {desc}".lower()
+                        if not any(k in check_text for k in ["tecnic", "repara", "electr", "manten", "inform", "telecom", "telefoni", "movil", "dispositiv"]):
+                            continue
+
+                        # Sueldo Job Today
+                        sal = p.get("salary", {})
+                        salary_str = "A convenir"
+                        if isinstance(sal, dict) and sal.get("from"):
+                            period = sal.get("period", "MONTHLY")
+                            p_str = "mes" if period == "MONTHLY" else "año"
+                            if sal.get("to") and sal["to"] != sal["from"]:
+                                salary_str = f"{sal['from']}€ - {sal['to']}€ / {p_str}"
+                            else:
+                                salary_str = f"{sal['from']}€ / {p_str}"
+
+                        results.append({
+                            "id": f"jt_{key}",
+                            "title": role,
+                            "companyName": comp,
+                            "city": city,
+                            "salary": salary_str,
+                            "link": f"https://jobtoday.com{slug}",
+                            "contractType": p.get("employmentType", "Jornada Completa"),
+                            "description": desc[:280] + "..." if len(desc) > 280 else desc,
+                            "source": "Job Today"
+                        })
+    except Exception as e:
+        print(f"  [!] Error Job Today '{category_slug}': {e}")
     return results
 
 
@@ -170,8 +279,8 @@ def run_radar():
     all_jobs = {}
     new_jobs = []
 
-    # 1. Rastrear InfoJobs
-    for q in QUERIES:
+    # 1. INFOJOBS
+    for q in ["tecnico reparacion moviles", "tecnico reparacion telefonia", "tecnico electronico moviles", "tecnico hardware"]:
         print(f" -> [InfoJobs] Buscando: '{q}'...")
         ij_offers = fetch_infojobs(q)
         print(f"    Encontradas {len(ij_offers)} ofertas.")
@@ -193,8 +302,6 @@ def run_radar():
             company = item.get("companyName", "Confidencial").strip()
             salary_str = format_salary(item.get("salary"))
             desc = item.get("description", "").strip()
-            published = item.get("publishedAt", "")
-            contract = item.get("contractType", "Indefinido")
 
             is_first_time = code not in history
             score = calculate_match_score(title, desc, city, company)
@@ -206,8 +313,8 @@ def run_radar():
                 "city": city,
                 "salary": salary_str,
                 "link": full_link,
-                "contract": contract,
-                "published": published,
+                "contract": item.get("contractType", "Indefinido"),
+                "published": item.get("publishedAt", "Reciente"),
                 "description": desc[:280] + "..." if len(desc) > 280 else desc,
                 "score": score,
                 "source": "InfoJobs",
@@ -222,7 +329,7 @@ def run_radar():
 
         time.sleep(1)
 
-    # 2. Rastrear LinkedIn
+    # 2. LINKEDIN
     for q in ["reparacion moviles", "tecnico hardware", "tecnico informatica", "tecnico telecomunicaciones"]:
         print(f" -> [LinkedIn] Buscando: '{q}'...")
         li_offers = fetch_linkedin(q)
@@ -232,23 +339,19 @@ def run_radar():
             if code in all_jobs:
                 continue
 
-            title = item["title"]
-            company = item["companyName"]
-            city = item["city"]
-            desc = item["description"]
-            score = calculate_match_score(title, desc, city, company)
-
+            score = calculate_match_score(item["title"], item["description"], item["city"], item["companyName"])
             is_first_time = code not in history
+
             job_obj = {
                 "id": code,
-                "title": title,
-                "company": company,
-                "city": city,
-                "salary": "Ver en LinkedIn",
+                "title": item["title"],
+                "company": item["companyName"],
+                "city": item["city"],
+                "salary": item["salary"],
                 "link": item["link"],
                 "contract": item["contractType"],
                 "published": "Reciente",
-                "description": desc,
+                "description": item["description"],
                 "score": score,
                 "source": "LinkedIn",
                 "is_new": is_first_time,
@@ -258,7 +361,79 @@ def run_radar():
             all_jobs[code] = job_obj
             if is_first_time:
                 new_jobs.append(job_obj)
-                history[code] = {"title": title, "company": company, "first_seen": job_obj["first_seen"]}
+                history[code] = {"title": job_obj["title"], "company": job_obj["company"], "first_seen": job_obj["first_seen"]}
+
+        time.sleep(1)
+
+    # 3. INDEED
+    for q in ["tecnico movil", "reparacion telefonia", "tecnico hardware"]:
+        print(f" -> [Indeed] Buscando: '{q}'...")
+        ind_offers = fetch_indeed(q)
+        print(f"    Encontradas {len(ind_offers)} ofertas.")
+        for item in ind_offers:
+            code = item["id"]
+            if code in all_jobs:
+                continue
+
+            score = calculate_match_score(item["title"], item["description"], item["city"], item["companyName"])
+            is_first_time = code not in history
+
+            job_obj = {
+                "id": code,
+                "title": item["title"],
+                "company": item["companyName"],
+                "city": item["city"],
+                "salary": item["salary"],
+                "link": item["link"],
+                "contract": item["contractType"],
+                "published": "Reciente",
+                "description": item["description"],
+                "score": score,
+                "source": "Indeed",
+                "is_new": is_first_time,
+                "first_seen": history.get(code, {}).get("first_seen", datetime.now().strftime("%Y-%m-%d %H:%M"))
+            }
+
+            all_jobs[code] = job_obj
+            if is_first_time:
+                new_jobs.append(job_obj)
+                history[code] = {"title": job_obj["title"], "company": job_obj["company"], "first_seen": job_obj["first_seen"]}
+
+        time.sleep(1)
+
+    # 4. JOB TODAY
+    for cat in ["trabajos-de-tecnico-en-madrid", "trabajos-de-informatica-en-madrid"]:
+        print(f" -> [Job Today] Explorando categoría: '{cat}'...")
+        jt_offers = fetch_jobtoday(cat)
+        print(f"    Filtradas {len(jt_offers)} ofertas técnicas.")
+        for item in jt_offers:
+            code = item["id"]
+            if code in all_jobs:
+                continue
+
+            score = calculate_match_score(item["title"], item["description"], item["city"], item["companyName"])
+            is_first_time = code not in history
+
+            job_obj = {
+                "id": code,
+                "title": item["title"],
+                "company": item["companyName"],
+                "city": item["city"],
+                "salary": item["salary"],
+                "link": item["link"],
+                "contract": item["contractType"],
+                "published": "Reciente",
+                "description": item["description"],
+                "score": score,
+                "source": "Job Today",
+                "is_new": is_first_time,
+                "first_seen": history.get(code, {}).get("first_seen", datetime.now().strftime("%Y-%m-%d %H:%M"))
+            }
+
+            all_jobs[code] = job_obj
+            if is_first_time:
+                new_jobs.append(job_obj)
+                history[code] = {"title": job_obj["title"], "company": job_obj["company"], "first_seen": job_obj["first_seen"]}
 
         time.sleep(1)
 
@@ -267,16 +442,16 @@ def run_radar():
     
     save_history(history)
 
-    # Guardar JSON
+    # Guardar JSON consolidado
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(sorted_jobs, f, ensure_ascii=False, indent=2)
 
     print(f"\n✅ Total ofertas consolidadas: {len(sorted_jobs)} | Nuevas hoy: {len(new_jobs)}")
 
-    # Generar Dashboard Web Interactivo
+    # Generar Dashboard Web
     generate_html_dashboard(sorted_jobs, len(new_jobs))
 
-    # Notificación Telegram (opcional)
+    # Notificación Telegram
     send_telegram_notification(new_jobs)
 
     return sorted_jobs, new_jobs
@@ -285,12 +460,31 @@ def run_radar():
 def generate_html_dashboard(jobs, new_count):
     now_str = datetime.now().strftime("%d/%m/%Y a las %H:%M")
     
+    # Contar por plataforma
+    sources_count = {"InfoJobs": 0, "LinkedIn": 0, "Indeed": 0, "Job Today": 0}
+    for j in jobs:
+        s = j.get("source", "")
+        if s in sources_count:
+            sources_count[s] += 1
+
     cards_html = ""
     for j in jobs:
         new_badge = '<span class="badge-new">⚡ NUEVA</span>' if j["is_new"] else ''
         high_badge = '<span class="badge-match">★ Gran Afinidad</span>' if j["score"] >= 70 else ''
-        source_icon = 'fab fa-linkedin' if j['source'] == 'LinkedIn' else 'fas fa-briefcase'
-        source_color = '#0a66c2' if j['source'] == 'LinkedIn' else '#ff6400'
+        
+        # Color & icono por plataforma
+        if j['source'] == 'LinkedIn':
+            source_icon = 'fab fa-linkedin'
+            source_color = '#0a66c2'
+        elif j['source'] == 'Indeed':
+            source_icon = 'fas fa-info'
+            source_color = '#2164f3'
+        elif j['source'] == 'Job Today':
+            source_icon = 'fas fa-calendar-day'
+            source_color = '#00c389'
+        else: # InfoJobs
+            source_icon = 'fas fa-briefcase'
+            source_color = '#ff6400'
 
         cards_html += f"""
         <article class="job-card {'is-new' if j['is_new'] else ''}" data-source="{j['source']}">
@@ -321,7 +515,7 @@ def generate_html_dashboard(jobs, new_count):
 
           <div class="job-footer">
             <span class="job-date"><i class="far fa-clock"></i> Detectada: {j['first_seen']}</span>
-            <a href="{j['link']}" target="_blank" class="btn-apply">
+            <a href="{j['link']}" target="_blank" class="btn-apply" style="background: {source_color}; color: #fff;">
               <span>Postularme en {j['source']}</span>
               <i class="fas fa-arrow-up-right-from-square"></i>
             </a>
@@ -334,7 +528,7 @@ def generate_html_dashboard(jobs, new_count):
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radar de Empleo Técnico — Madrid | NEXARA</title>
+  <title>Radar de Empleo Madrid (4 Portales) — NEXARA</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -412,7 +606,7 @@ def generate_html_dashboard(jobs, new_count):
     }}
     .stats-bar {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 1rem;
       margin-bottom: 2rem;
     }}
@@ -428,7 +622,7 @@ def generate_html_dashboard(jobs, new_count):
       color: #fff;
     }}
     .stat-lbl {{
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -443,7 +637,7 @@ def generate_html_dashboard(jobs, new_count):
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 0.4rem 1rem;
+      padding: 0.45rem 1rem;
       border-radius: 9999px;
       font-size: 0.82rem;
       font-weight: 600;
@@ -451,9 +645,9 @@ def generate_html_dashboard(jobs, new_count):
       transition: all 0.2s;
     }}
     .f-btn.active {{
-      background: var(--accent);
+      background: #fff;
       color: #000;
-      border-color: var(--accent);
+      border-color: #fff;
     }}
     .jobs-feed {{
       display: flex;
@@ -585,8 +779,6 @@ def generate_html_dashboard(jobs, new_count):
       color: var(--text-muted);
     }}
     .btn-apply {{
-      background: var(--accent);
-      color: #000;
       font-weight: 700;
       font-size: 0.85rem;
       padding: 0.55rem 1.15rem;
@@ -595,10 +787,10 @@ def generate_html_dashboard(jobs, new_count):
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      transition: background 0.2s, transform 0.2s;
+      transition: opacity 0.2s, transform 0.2s;
     }}
     .btn-apply:hover {{
-      background: #7dd3fc;
+      opacity: 0.9;
       transform: translateY(-1px);
     }}
   </style>
@@ -610,7 +802,7 @@ def generate_html_dashboard(jobs, new_count):
       <div class="brand-group">
         <span class="radar-pulse"></span>
         <h1>NEXARA JOB RADAR</h1>
-        <span class="meta-tag">· InfoJobs & LinkedIn Madrid</span>
+        <span class="meta-tag">· InfoJobs · LinkedIn · Indeed · Job Today</span>
       </div>
       <div class="meta-tag">
         Última actualización: <strong>{now_str}</strong>
@@ -630,15 +822,21 @@ def generate_html_dashboard(jobs, new_count):
         <div class="stat-lbl">Nuevas en este escaneo</div>
       </div>
       <div class="stat-card">
-        <div class="stat-val">Madrid & Norte</div>
+        <div class="stat-val">4 Portales</div>
+        <div class="stat-lbl">Fuentes de Empleo</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">Madrid</div>
         <div class="stat-lbl">Zona Geográfica</div>
       </div>
     </div>
 
     <div class="filter-bar">
-      <button class="f-btn active" onclick="filterSource('all', this)">Todas las ofertas</button>
-      <button class="f-btn" onclick="filterSource('InfoJobs', this)">Solo InfoJobs</button>
-      <button class="f-btn" onclick="filterSource('LinkedIn', this)">Solo LinkedIn</button>
+      <button class="f-btn active" onclick="filterSource('all', this)">Todas ({len(jobs)})</button>
+      <button class="f-btn" onclick="filterSource('InfoJobs', this)">InfoJobs ({sources_count['InfoJobs']})</button>
+      <button class="f-btn" onclick="filterSource('LinkedIn', this)">LinkedIn ({sources_count['LinkedIn']})</button>
+      <button class="f-btn" onclick="filterSource('Indeed', this)">Indeed ({sources_count['Indeed']})</button>
+      <button class="f-btn" onclick="filterSource('Job Today', this)">Job Today ({sources_count['Job Today']})</button>
     </div>
 
     <section class="jobs-feed" id="jobsFeed">
@@ -674,7 +872,6 @@ def send_telegram_notification(new_jobs):
     bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
 
-    # Si no están en variables de entorno, intentar cargar config.local.json
     local_cfg = os.path.join(BASE_DIR, "config.local.json")
     if (not bot_token or not chat_id) and os.path.exists(local_cfg):
         try:
