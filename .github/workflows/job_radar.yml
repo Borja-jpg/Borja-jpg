@@ -1,0 +1,37 @@
+name: Nexara Job Radar Madrid
+
+on:
+  schedule:
+    # Ejecutar todos los días a las 08:00 y a las 15:00 (hora peninsular española)
+    - cron: '0 6,13 * * *'
+  workflow_dispatch: # Permite ejecutarlo manualmente con 1 clic desde GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  scan-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Ejecutar Radar de Empleo (InfoJobs + LinkedIn Madrid)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python radar/radar.py
+
+      - name: Guardar y publicar ofertas actualizadas en la web
+        run: |
+          git config --global user.name "Nexara Job Radar Bot"
+          git config --global user.email "bot@nexaramadrid.es"
+          git add radar/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Actualización automática Radar de Empleo Madrid [skip ci]" && git push)
