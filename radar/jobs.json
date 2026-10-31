@@ -1,33 +1,18 @@
 [
   {
-    "id": "li_4479364238",
-    "title": "ES SAT Technician",
-    "company": "Henry Schein",
-    "city": "Madrid",
-    "salary": "Ver en LinkedIn",
-    "link": "https://es.linkedin.com/jobs/view/es-sat-technician-at-henry-schein-4479364238",
-    "contract": "Ver en oferta",
-    "published": "Reciente",
-    "description": "Puesto técnico publicado en LinkedIn para Madrid.",
-    "score": 55,
-    "source": "LinkedIn",
-    "is_new": true,
-    "first_seen": "2026-10-31 11:19"
-  },
-  {
-    "id": "jt_zPxnmr",
-    "title": "Barista",
-    "company": "Loft",
-    "city": "Cuatro Caminos, Madrid, Community of Madrid, Spain",
-    "salary": "A convenir",
-    "link": "https://jobtoday.com/es/trabajo/barista-zPxnmr",
+    "id": "jt_o4Zvjj",
+    "title": "Pizzero/a",
+    "company": "Insurgente",
+    "city": "Tetuán, Madrid, Comunidad de Madrid, España",
+    "salary": "1400€ - 1600€ / mes",
+    "link": "https://jobtoday.com/es/trabajo/pizzero-a-o4Zvjj",
     "contract": "FULL_TIME",
     "published": "Reciente",
-    "description": "¿Te apasiona el café de especialidad y dominas el Latte Art? ¡En nuestra cafetería de Cuatro Caminos te estamos buscando! Buscamos un/a Barista con experiencia y con ganas de trabajar con la mejor maquinaria y productos del sector. Responsabilidades principales: • Calibrar molino...",
+    "description": "🍕 ¡Buscamos Pizzero/a \"Insurgente de la pizza\" para San Leopoldo ¿Crees que la pizza es un lienzo en blanco? ¿Te apasiona la técnica pero odias los límites convencionales? En nuestro rincón del Mercado de San Leopoldo (Madrid), no buscamos a alguien que solo estire masa; buscamos...",
     "score": 55,
     "source": "Job Today",
     "is_new": true,
-    "first_seen": "2026-10-31 11:19"
+    "first_seen": "2026-10-31 17:24"
   },
   {
     "id": "2fed326f6842a4939d70e028f0070e",
@@ -900,6 +885,21 @@
     "first_seen": "2026-10-22 22:32"
   },
   {
+    "id": "li_4411519796",
+    "title": "Técnico de Instalación y Soporte",
+    "company": "DTN",
+    "city": "Madrid",
+    "salary": "Ver en LinkedIn",
+    "link": "https://es.linkedin.com/jobs/view/t%C3%A9cnico-de-instalaci%C3%B3n-y-soporte-at-dtn-4411519796",
+    "contract": "Ver en oferta",
+    "published": "Reciente",
+    "description": "Puesto técnico publicado en LinkedIn para Madrid.",
+    "score": 55,
+    "source": "LinkedIn",
+    "is_new": false,
+    "first_seen": "2026-10-22 22:32"
+  },
+  {
     "id": "li_4481557392",
     "title": "Técnico/a Soporte IT (Digital Corner)",
     "company": "FDS, A DXC Technology Company",
@@ -1183,6 +1183,21 @@
     "source": "Job Today",
     "is_new": false,
     "first_seen": "2026-10-24 09:54"
+  },
+  {
+    "id": "jt_zPxnmr",
+    "title": "Barista",
+    "company": "Loft",
+    "city": "Cuatro Caminos, Madrid, Community of Madrid, Spain",
+    "salary": "A convenir",
+    "link": "https://jobtoday.com/es/trabajo/barista-zPxnmr",
+    "contract": "FULL_TIME",
+    "published": "Reciente",
+    "description": "¿Te apasiona el café de especialidad y dominas el Latte Art? ¡En nuestra cafetería de Cuatro Caminos te estamos buscando! Buscamos un/a Barista con experiencia y con ganas de trabajar con la mejor maquinaria y productos del sector. Responsabilidades principales: • Calibrar molino...",
+    "score": 55,
+    "source": "Job Today",
+    "is_new": false,
+    "first_seen": "2026-10-31 11:19"
   },
   {
     "id": "jt_bgYZP7",
@@ -1515,36 +1530,6 @@
     "first_seen": "2026-10-30 11:45"
   },
   {
-    "id": "jt_YRa6nj",
-    "title": "Fisioterapeuta colegiado/a a domicilio (colaboración autónoma)",
-    "company": "TrasAlta",
-    "city": "Madrid, Comunidad de Madrid, España",
-    "salary": "A convenir",
-    "link": "https://jobtoday.com/es/trabajo/fisioterapeuta-colegiado-a-a-domicilio-colaboracion-autonoma--YRa6nj",
-    "contract": "PART_TIME",
-    "published": "Reciente",
-    "description": "SOBRE TRASALTA TrasAlta es un servicio sanitario de fisioterapia y enfermería a domicilio en Madrid, autorizado por la Comunidad de Madrid (registro de centros sanitarios CS21759). Atendemos sobre todo la recuperación en casa tras una cirugía traumatológica (prótesis de cadera y ...",
-    "score": 55,
-    "source": "Job Today",
-    "is_new": false,
-    "first_seen": "2026-10-30 11:45"
-  },
-  {
-    "id": "jt_BwEOGw",
-    "title": "Hostess",
-    "company": "Restaurante El Picaporte",
-    "city": "Chamberí, Madrid, Comunidad de Madrid, España",
-    "salary": "22000€ - 26000€ / año",
-    "link": "https://jobtoday.com/es/trabajo/hostess-BwEOGw",
-    "contract": "FULL_TIME",
-    "published": "Reciente",
-    "description": "• Gestionar reservas y ofrecer una atención al cliente profesional y cercana en el entorno de restauración., • Apoyar al equipo de sala para garantizar un servicio fluido y una experiencia excelente para cada cliente., • Utilizar aplicaciones de gestión de reservas y atención, co...",
-    "score": 55,
-    "source": "Job Today",
-    "is_new": false,
-    "first_seen": "2026-10-27 11:10"
-  },
-  {
     "id": "jt_YRaaOy",
     "title": "Comercial Inmobiliario",
     "company": "ROOM SPACE SL",
@@ -1633,6 +1618,21 @@
     "source": "Job Today",
     "is_new": false,
     "first_seen": "2026-10-23 17:33"
+  },
+  {
+    "id": "jt_YRa6nj",
+    "title": "Fisioterapeuta colegiado/a a domicilio (colaboración autónoma)",
+    "company": "TrasAlta",
+    "city": "Madrid, Comunidad de Madrid, España",
+    "salary": "A convenir",
+    "link": "https://jobtoday.com/es/trabajo/fisioterapeuta-colegiado-a-a-domicilio-colaboracion-autonoma--YRa6nj",
+    "contract": "PART_TIME",
+    "published": "Reciente",
+    "description": "SOBRE TRASALTA TrasAlta es un servicio sanitario de fisioterapia y enfermería a domicilio en Madrid, autorizado por la Comunidad de Madrid (registro de centros sanitarios CS21759). Atendemos sobre todo la recuperación en casa tras una cirugía traumatológica (prótesis de cadera y ...",
+    "score": 55,
+    "source": "Job Today",
+    "is_new": false,
+    "first_seen": "2026-10-30 11:45"
   },
   {
     "id": "jt_nKMab5",
