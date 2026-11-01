@@ -1,18 +1,33 @@
 [
   {
-    "id": "jt_o4Zvjj",
-    "title": "Pizzero/a",
-    "company": "Insurgente",
-    "city": "Tetuán, Madrid, Comunidad de Madrid, España",
-    "salary": "1400€ - 1600€ / mes",
-    "link": "https://jobtoday.com/es/trabajo/pizzero-a-o4Zvjj",
+    "id": "jt_9wEEDM",
+    "title": "Cocinero/a",
+    "company": "The Little Big Cafe",
+    "city": "Chamberí, Madrid, Comunidad de Madrid, España",
+    "salary": "1400€ - 1500€ / mes",
+    "link": "https://jobtoday.com/es/trabajo/cocinero-a-9wEEDM",
     "contract": "FULL_TIME",
     "published": "Reciente",
-    "description": "🍕 ¡Buscamos Pizzero/a \"Insurgente de la pizza\" para San Leopoldo ¿Crees que la pizza es un lienzo en blanco? ¿Te apasiona la técnica pero odias los límites convencionales? En nuestro rincón del Mercado de San Leopoldo (Madrid), no buscamos a alguien que solo estire masa; buscamos...",
+    "description": "Buscamos una cocinera apasionada y con talento para unirse a nuestro equipo en Bistro by The Little Big Cafe, un restaurante cercano a bravo Murillo. Nos especializamos en ofrecer una deliciosa variedad de brunch, desayunos, comidas y menú del día y buscamos a alguien con ganas d...",
     "score": 55,
     "source": "Job Today",
     "is_new": true,
-    "first_seen": "2026-10-31 17:24"
+    "first_seen": "2026-11-01 12:09"
+  },
+  {
+    "id": "jt_ANEEEr",
+    "title": "Encargado/a de Cocina",
+    "company": "Restaurante Casa Xu",
+    "city": "Usera, Madrid, Comunidad de Madrid, España",
+    "salary": "2350€ - 2850€ / mes",
+    "link": "https://jobtoday.com/es/trabajo/encargado-a-de-cocina-ANEEEr",
+    "contract": "FULL_TIME",
+    "published": "Reciente",
+    "description": "CASA XU es un nuevo restaurante de cocina china-andaluza contemporánea en Usera. Buscamos un/a Encargado/a de Cocina que se responsabilice de la operativa diaria de cocina y lidere al equipo durante la producción y el servicio. Buscamos una persona con buena base técnica, organiz...",
+    "score": 55,
+    "source": "Job Today",
+    "is_new": true,
+    "first_seen": "2026-11-01 12:09"
   },
   {
     "id": "2fed326f6842a4939d70e028f0070e",
@@ -225,6 +240,21 @@
     "first_seen": "2026-10-23 10:36"
   },
   {
+    "id": "2333c38fae481aa56c02f692f116f4",
+    "title": "Técnico/a informático/a",
+    "company": "Fractalia Remote Systems S.L.",
+    "city": "Madrid",
+    "salary": "A convenir / No especificado",
+    "link": "https://www.infojobs.net/madrid/tecnico-informatico/of-i2333c38fae481aa56c02f692f116f4?applicationOrigin=search-new&page=1&sortBy=RELEVANCE",
+    "contract": "Contrato indefinido",
+    "published": "2026-10-30T10:59:19Z",
+    "description": "En Grupo Fractalia buscamos personas como tú.\nSomos una multinacional española de tecnología especializada en gestión IT y telecomunicaciones. Ofrecemos vanguardismo tecnológico, experiencia y cercanía para crecer junto a nuestros clientes, entre los que se encuentran algunos de ...",
+    "score": 79,
+    "source": "InfoJobs",
+    "is_new": false,
+    "first_seen": "2026-10-30 11:45"
+  },
+  {
     "id": "11833baac5405d927bbf74cdb820f5",
     "title": "Agente de atención al cliente",
     "company": "Euronet Worldwide- Ria Payment Institution",
@@ -330,19 +360,19 @@
     "first_seen": "2026-10-22 22:32"
   },
   {
-    "id": "jt_0moDxB",
-    "title": "Beca Prevención de Riesgos Laborales (PRL) - Minor Hotels Spain",
-    "company": "Hosco",
-    "city": "Alcobendas, Comunidad de Madrid, España",
-    "salary": "A convenir",
-    "link": "https://jobtoday.com/es/trabajo/beca-prevencion-de-riesgos-laborales-prl-minor-hotels-spain-0moDxB",
-    "contract": "FULL_TIME",
+    "id": "li_4482084121",
+    "title": "Arquitecto/a Técnico/a de Proyectos Edificación y Sistemas de Aparcamiento",
+    "company": "Soluciones de Movilidad y Sostenibilidad  S.L.",
+    "city": "Madrid",
+    "salary": "Ver en LinkedIn",
+    "link": "https://es.linkedin.com/jobs/view/arquitecto-a-t%C3%A9cnico-a-de-proyectos-edificaci%C3%B3n-y-sistemas-de-aparcamiento-at-soluciones-de-movilidad-y-sostenibilidad-4482084121",
+    "contract": "Ver en oferta",
     "published": "Reciente",
-    "description": "¿Buscas unas prácticas donde puedas aplicar todo lo aprendido? ¿Algo que te motive? ¡Sí, así es! ¡Esta es tu oportunidad! Ofrecemos unas prácticas en el Área de Prevención de Riesgos Laborales (PRL), ubicada en los Servicios Centrales de España (C/ Alfonso Gómez 30-32, Madrid). L...",
+    "description": "Puesto técnico publicado en LinkedIn para Madrid.",
     "score": 75,
-    "source": "Job Today",
+    "source": "LinkedIn",
     "is_new": false,
-    "first_seen": "2026-10-23 10:37"
+    "first_seen": "2026-10-27 18:26"
   },
   {
     "id": "jt_V4VxV9",
@@ -585,21 +615,6 @@
     "first_seen": "2026-10-28 18:33"
   },
   {
-    "id": "f7ff509c754a4e8a7af1db8b9f4597",
-    "title": "Técnico/a de Soporte Microinformático - Alcobendas",
-    "company": "COS Global Services",
-    "city": "Alcobendas",
-    "salary": "A convenir / No especificado",
-    "link": "https://www.infojobs.net/alcobendas/tecnico-soporte-microinformatico-alcobendas/of-if7ff509c754a4e8a7af1db8b9f4597?applicationOrigin=search-new&page=1&sortBy=RELEVANCE",
-    "contract": "Contrato indefinido",
-    "published": "2026-10-15T10:08:14Z",
-    "description": "Funciones\nDesde COS Global Services nos encontramos en búsqueda de un/a Técnico/a de Soporte Microinformático con experiencia de al menos 2 años realizando tareas de soporte a usuarios, resolución de incidencias en Directorio Activo, altas, bajas, contraseñas, permisos, O365, Out...",
-    "score": 65,
-    "source": "InfoJobs",
-    "is_new": false,
-    "first_seen": "2026-10-23 10:36"
-  },
-  {
     "id": "c55e00e79b4521a8ffe56dd1bf8506",
     "title": "Técnico / técnica reparación electrónica",
     "company": "Randstad",
@@ -808,21 +823,6 @@
     "source": "LinkedIn",
     "is_new": false,
     "first_seen": "2026-10-22 22:32"
-  },
-  {
-    "id": "li_4480945820",
-    "title": "Consultor/a Junior de Posventa (Automoción)",
-    "company": "MSX International",
-    "city": "Madrid",
-    "salary": "Ver en LinkedIn",
-    "link": "https://es.linkedin.com/jobs/view/consultor-a-junior-de-posventa-automoci%C3%B3n-at-msx-international-4480945820",
-    "contract": "Ver en oferta",
-    "published": "Reciente",
-    "description": "Puesto técnico publicado en LinkedIn para Madrid.",
-    "score": 55,
-    "source": "LinkedIn",
-    "is_new": false,
-    "first_seen": "2026-10-25 10:16"
   },
   {
     "id": "li_4483020491",
@@ -1065,12 +1065,12 @@
     "first_seen": "2026-10-22 22:32"
   },
   {
-    "id": "li_4448188091",
-    "title": "Junior Engineer/Técnico de Telecomunicaciones (CHINO ALTO)",
-    "company": "Neotalent Conclusion",
+    "id": "li_4399567036",
+    "title": "Técnico/a de Networking",
+    "company": "Alcorce Telecomunicaciones S.L.",
     "city": "Madrid",
     "salary": "Ver en LinkedIn",
-    "link": "https://es.linkedin.com/jobs/view/junior-engineer-t%C3%A9cnico-de-telecomunicaciones-chino-alto-at-neotalent-conclusion-4448188091",
+    "link": "https://es.linkedin.com/jobs/view/t%C3%A9cnico-a-de-networking-at-alcorce-telecomunicaciones-sl-4399567036",
     "contract": "Ver en oferta",
     "published": "Reciente",
     "description": "Puesto técnico publicado en LinkedIn para Madrid.",
@@ -1080,12 +1080,12 @@
     "first_seen": "2026-10-22 22:32"
   },
   {
-    "id": "li_4399567036",
-    "title": "Técnico/a de Networking",
-    "company": "Alcorce Telecomunicaciones S.L.",
+    "id": "li_4476300264",
+    "title": "Técnico/a de Mantenimiento de Red Móvil- Madrid",
+    "company": "Apave Portugal (antes EISP Qualidade)",
     "city": "Madrid",
     "salary": "Ver en LinkedIn",
-    "link": "https://es.linkedin.com/jobs/view/t%C3%A9cnico-a-de-networking-at-alcorce-telecomunicaciones-sl-4399567036",
+    "link": "https://es.linkedin.com/jobs/view/t%C3%A9cnico-a-de-mantenimiento-de-red-m%C3%B3vil-madrid-at-apave-portugal-antes-eisp-qualidade-4476300264",
     "contract": "Ver en oferta",
     "published": "Reciente",
     "description": "Puesto técnico publicado en LinkedIn para Madrid.",
@@ -1168,6 +1168,21 @@
     "source": "Job Today",
     "is_new": false,
     "first_seen": "2026-10-22 22:49"
+  },
+  {
+    "id": "jt_o4Zvjj",
+    "title": "Pizzero/a",
+    "company": "Insurgente",
+    "city": "Tetuán, Madrid, Comunidad de Madrid, España",
+    "salary": "1400€ - 1600€ / mes",
+    "link": "https://jobtoday.com/es/trabajo/pizzero-a-o4Zvjj",
+    "contract": "FULL_TIME",
+    "published": "Reciente",
+    "description": "🍕 ¡Buscamos Pizzero/a \"Insurgente de la pizza\" para San Leopoldo ¿Crees que la pizza es un lienzo en blanco? ¿Te apasiona la técnica pero odias los límites convencionales? En nuestro rincón del Mercado de San Leopoldo (Madrid), no buscamos a alguien que solo estire masa; buscamos...",
+    "score": 55,
+    "source": "Job Today",
+    "is_new": false,
+    "first_seen": "2026-10-31 17:24"
   },
   {
     "id": "jt_ANE2Br",
@@ -1513,21 +1528,6 @@
     "source": "Job Today",
     "is_new": false,
     "first_seen": "2026-10-22 22:49"
-  },
-  {
-    "id": "jt_R07Vjv",
-    "title": "Director tecnico",
-    "company": "Ukelele Eventos",
-    "city": "Hortaleza, Madrid, Comunidad de Madrid, España",
-    "salary": "A convenir",
-    "link": "https://jobtoday.com/es/trabajo/director-tecnico-R07Vjv",
-    "contract": "PART_TIME",
-    "published": "Reciente",
-    "description": "Director técnico de Agencia de eventos",
-    "score": 55,
-    "source": "Job Today",
-    "is_new": false,
-    "first_seen": "2026-10-30 11:45"
   },
   {
     "id": "jt_YRaaOy",
@@ -2169,21 +2169,6 @@
     "contract": "Contrato indefinido",
     "published": "2026-10-07T16:07:10Z",
     "description": "Ubicación: Getafe\nDescripción del Puesto:\nUna importante empresa del sector tecnológico y servicio técnico oficial busca incorporar a un/a técnico/a en reparación de telefonía móvil.\n\nRequisitos:\n\n- Diagnosticar y reparación de telefonía\n\n\nSe Ofrece:\n\n- Contrato indefinido.\n- Jor...",
-    "score": 45,
-    "source": "InfoJobs",
-    "is_new": false,
-    "first_seen": "2026-10-22 22:28"
-  },
-  {
-    "id": "d90b2a97e84c70ac778e40831ac987",
-    "title": "TECNICO DE LABORATORIO- SECTOR FARMACEUTICO",
-    "company": "Laboratorios Normon",
-    "city": "Tres Cantos",
-    "salary": "A convenir / No especificado",
-    "link": "https://www.infojobs.net/tres-cantos/tecnico-laboratorio-sector-farmaceutico/of-id90b2a97e84c70ac778e40831ac987?applicationOrigin=search-new&page=1&sortBy=RELEVANCE",
-    "contract": "Contrato indefinido",
-    "published": "2026-09-01T13:26:59Z",
-    "description": "Fundada en 1937 y con una plantilla de 3400 trabajadores, Normon cumple 85 años de compromiso con la sociedad española fabricando medicamentos de la máxima calidad. Hace 20 años Normon lanzaba los primeros medicamentos genéricos y desde entonces, ha mantenido su liderazgo en el s...",
     "score": 45,
     "source": "InfoJobs",
     "is_new": false,
